@@ -1,24 +1,143 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>BryumČištění – Čištění střech Zlín</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-        header { background: #fff; padding: 20px; display: flex; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        header img { height: 100px; margin-right: 20px; }
-        header h1 { margin: 0; font-size: 24px; color: #2e7d32; }
-        .container { padding: 20px; max-width: 900px; margin: auto; background: #fff; }
-        h2 { color: #2e7d32; }
-        .gallery img { width: 100%; max-width: 420px; margin: 10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: space-between; }
-        .pricing, .contact, .form-section { margin-top: 30px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background: #e8f5e9; }
-        form input, form textarea { width: 100%; padding: 10px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 4px; }
-        form button { background: #2e7d32; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-        footer { text-align: center; padding: 20px; font-size: 14px; color: #777; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            font-size: 16px;
+        }
+
+        header {
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #2e7d32;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2e7d32;
+            font-size: 22px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 420px;
+            margin: 10px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            display: block;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery div {
+            max-width: 420px;
+            margin: 10px;
+        }
+
+        .pricing, .contact, .form-section {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e8f5e9;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+
+            header img {
+                height: 80px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            table, th, td {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,7 +182,7 @@
             <h2>Kontakt</h2>
             <p><strong>Telefon:</strong> <a href="tel:+420799522522">+420 799 522 522</a></p>
             <p><strong>E-mail:</strong> <a href="mailto:info@bryumcisteni.cz">info@bryumcisteni.cz</a></p>
-            <p><strong>Web:</strong> <a href="
+            <p><strong>Web:</strong> <a href="https://www.bryumcisteni.cz">www.bryumcisteni.cz</a></p>
         </section>
 
         <section class="form-section">
