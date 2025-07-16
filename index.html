@@ -1,3 +1,213 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>BryumČištění – Na střechu za Vás</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --font-main: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('UploadedImage0.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            position: relative;
+            font-size: 3rem;
+            margin: 0;
+            z-index: 1;
+        }
+
+        nav {
+            background: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem 1rem;
+            background: white;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background: #e8f5e9;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BryumČištění – Na střechu za Vás</h1>
+    </header>
+
+    <nav>
+        <a href="#sluzby">Služby</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#proc">Proč my</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#formular">Formulář</a>
+    </nav>
+
+    <div class="container">
+        <section id="sluzby">
+            <h2>Naše služby</h2>
+            <ul>
+                <li>Čištění střech od mechu, lišejníků a nečistot</li>
+                <li>Ošetření střechy fungicidy proti opětovnému růstu</li>
+                <li>Impregnace pro prodloužení životnosti krytiny</li>
+                <li>Čištění okapů a svodů</li>
+                <li>Čištění fotovoltaických panelů</li>
+                <li>Drobné opravy střech (např. výměna prasklé střešní tašky)</li>
+            </ul>
+        </section>
+
+        <section id="galerie">
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <img src="UploadedImage0.jpg" alt="Střecha před a po čištění">
+            </div>
+        </section>
+
+        <section id="cenik">
+            <h2>Ceník služeb</h2>
+            <table>
+                <tr><th>Služba</th><th>Cena od</th></tr>
+                <tr><td>Čištění střechy</td><td>od 60 Kč/m²</td></tr>
+                <tr><td>Fungicidní ošetření</td><td>od 25 Kč/m²</td></tr>
+                <tr><td>Impregnace střechy</td><td>od 30 Kč/m²</td></tr>
+                <tr><td>Čištění okapů</td><td>od 500 Kč</td></tr>
+                <tr><td>Čištění FVE panelů</td><td>od 40 Kč/panel</td></tr>
+                <tr><td>Výměna střešní tašky</td><td>od 150 Kč/ks</td></tr>
+            </table>
+        </section>
+
+        <section id="proc">
+            <h2>Proč si vybrat nás</h2>
+            <ul>
+                <li>Profesionální přístup a certifikace pro výškové práce</li>
+                <li>Moderní vybavení a bezpečnostní jištění</li>
+                <li>Individuální přístup ke každému zákazníkovi</li>
+                <li>Rychlé a kvalitní provedení služeb</li>
+                <li>5% sleva pro nové zákazníky</li>
+            </ul>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p><strong>Telefon:</strong> <a href="tel:+420799522522">+420 799 522 522</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:info@bryumcisteni.cz">info@bryumcisteni.cz</a></p>
+        </section>
+
+        <section id="formular">
+            <h2>Kontaktní formulář</h2>
+            <form action="mailto:info@bryumcisteni.cz" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Jméno" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 BryumČištění.cz – Čištění střech Zlín a okolí
+    </footer>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html lang="cs">
