@@ -1,0 +1,30 @@
+
+name: Website Audit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install HTMLHint
+        run: npm install -g htmlhint
+
+      - name: Run HTMLHint
+        run: htmlhint ./ || true
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --collect.url=https://bryumcisteni.github.io/moje-stranka/ || true
