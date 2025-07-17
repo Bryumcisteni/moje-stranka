@@ -51,12 +51,72 @@
             margin: 10px auto;
             display: block;
             border-radius: 10px;
+            cursor: pointer;
         }
         footer {
             background: #111;
             text-align: center;
             padding: 20px;
         }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .lightbox-header {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 2001;
+        }
+
+        .close {
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .lightbox-content {
+            position: relative;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            max-width: 80%;
+            max-height: 80vh;
+            margin: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-size: 40px;
+            padding: 16px;
+            user-select: none;
+        }
+
+        .prev { left: 0; }
+        .next { right: 0; }
     </style>
 </head>
 <body>
@@ -108,8 +168,8 @@
 <section id="galerie" style="background-image: url('poz4.png');">
     <div class="overlay gallery">
         <h2>Ukázky naší práce</h2>
-        <img src="cisteni.jpg" alt="Před a po čištění">
-        <img src="teren.jpg" alt="Průběh čištění">
+        <img src="cisteni.jpg" alt="Před a po čištění" onclick="openLightbox();currentSlide(1)">
+        <img src="teren.jpg" alt="Průběh čištění" onclick="openLightbox();currentSlide(2)">
     </div>
 </section>
 
@@ -122,9 +182,52 @@
     </div>
 </section>
 
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-header">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+  </div>
+  <div class="lightbox-content">
+    <img class="slide" src="cisteni.jpg" alt="Před a po čištění">
+    <img class="slide" src="teren.jpg" alt="Průběh čištění">
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+</div>
+
 <footer>
-    &copy; 2024 Bryum Čištění. Všechna práva vyhrazena.
+    &copy; 2025 Bryum Čištění. Všechna práva vyhrazena.
 </footer>
+
+<script>
+let slideIndex = 1;
+
+function openLightbox() {
+  document.getElementById("lightbox").style.display = "block";
+  showSlide(slideIndex);
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+  let slides = document.getElementsByClassName("slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+</script>
 
 </body>
 </html>
