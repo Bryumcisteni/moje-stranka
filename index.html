@@ -104,7 +104,7 @@
             max-height: 80vh;
             margin: auto;
         }
-.flex-container {
+	.flex-container {
     		display: flex;
     		flex-wrap: wrap;
     		gap: 20px;
@@ -116,6 +116,11 @@
    		 flex: 1 1 300px;
     		max-width: 350px;
 	}
+	
+ 	.custom-list li {
+    		margin-bottom: 1.5em; /* zvětší mezeru mezi položkami */
+    		line-height: 1.6;     /* zvětší řádkování uvnitř položky */
+  	}
 
 	.flex-image img {
     		width: 100%;
@@ -182,7 +187,7 @@
                 <img src="impregnace.webp" alt="Porovnání střešní tašky bez impregnace a s impregnací během deště ">
             </div>
             <div class="flex-text">
-	<ul>
+	<ul class="custom-list">
                     <li><strong>Mech a lišejníky</strong> zadržují vlhkost a narušují strukturu střešní krytiny. To vede k rychlejšímu stárnutí materiálu a v krajních případech i k zatékání.</li>
                     <li>Pravidelným čištěním a ošetřením střechy lze její životnost prodloužit až o <strong>15 let</strong> – a to vše bez nutnosti výměny krytiny.</li>
                     <li><strong>Ošetření biocidem</strong> zamezuje opětovnému růstu řas, lišejníků a mechu. Účinnost ošetření trvá až <strong>8–10 let</strong>.</li>
