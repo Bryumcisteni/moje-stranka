@@ -259,13 +259,39 @@
 <section id="kontakt" style="background: #222;">
     <div class="overlay">
         <h2>Kontakt</h2>
-        <p><strong>Martin Bartoš</strong></p>
-	<p>IČO: 23510994</p>
-        <p>Telefon: <a href="tel:+420799522522" style="color:lightblue;">+420&nbsp;799&nbsp;522&nbsp;522</a></p>
-        <p>Email: <a href="mailto:info@bryumcisteni.cz" style="color:lightblue;">info@bryumcisteni.cz</a></p>
+	<p style="margin: 2px 0; line-height: 1.2;">Telefon: <a href="tel:+420799522522" style="color:lightblue;">+420 799 522 522</a></p>
+	<p style="margin: 2px 0; line-height: 1.2;">Email: <a href="mailto:info@bryumcisteni.cz" style="color:lightblue;">info@bryumcisteni.cz</a></p>
+	<p style="margin: 2px 0; line-height: 1.2;"><strong>Martin Bartoš</strong></p>
+	<p style="margin: 2px 0; line-height: 1.2;">IČO: 23510994</p>   
 	<p class="kontakt-doplnek">Zapsán v živnostenském rejstříku vedeném Městským úřadem Žďár nad Sázavou</p>
 	<p class="kontakt-doplnek">Sídlo podnikání: Polnička 221, 591 02 Polnička</p>
 	<p class="kontakt-doplnek">Působnost služeb: Zlínský kraj a okolí</p>
+
+	    <!-- Poptávkový formulář -->
+	<h2 style="margin-top:2em;">Poptávkový formulář</h2>
+		<form action="https://formsubmit.co/cncprogramatorcnc@gmail.com" method="POST">
+   		<label for="email">Váš e-mail:</label><br>
+   		<input type="email" name="email" required><br><br>
+
+		<label for="telefon">Váš telefon:</label><br>
+ 		<input type="tel" name="telefon" required><br><br>
+
+  		<label for="sluzby">Vyberte požadované služby:</label><br>
+  		<input type="checkbox" name="sluzby[]" value="Čištění střechy"> Čištění střechy<br>
+  		<input type="checkbox" name="sluzby[]" value="Biocid"> Aplikace biocidu<br>
+    		<input type="checkbox" name="sluzby[]" value="Impregnace"> Aplikace impregnace<br>
+    		<input type="checkbox" name="sluzby[]" value="Čištění FVE panelů"> Čištění FVE panelů<br>
+    		<input type="checkbox" name="sluzby[]" value="Čištění okapů"> Čištění okapů<br>
+    		<input type="checkbox" name="sluzby[]" value="Drobná oprava střechy"> Drobná oprava střechy<br>
+    		<input type="checkbox" name="sluzby[]" value="Jiné výškové práce na střeše"> Jiné výškové práce na střeše<br><br>
+
+    		<label for="message">Text poptávky:</label><br>
+    		<textarea name="message" rows="5" required></textarea><br><br>
+
+    		<input type="hidden" name="_next" value="https://bryumcisteni.cz/dekujeme.html">
+    		<button type="submit">Odeslat poptávku</button>
+</form>
+
     </div>
 </section>
 
