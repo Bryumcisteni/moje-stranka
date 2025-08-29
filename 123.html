@@ -1,0 +1,226 @@
+
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRYUM Čištění – Dlaždicové menu</title>
+  <meta name="description" content="Dlaždicové menu služeb pro bryumcisteni.cz" />
+  <style>
+    :root{
+      --bg:#0f172a;           /* slate-900 */
+      --card:#111827;         /* gray-900 */
+      --card-2:#0b1226;       /* custom deep */
+      --text:#e5e7eb;         /* gray-200 */
+      --muted:#9ca3af;        /* gray-400 */
+      --brand:#22c55e;        /* green-500 */
+      --brand-2:#86efac;      /* green-200 */
+      --accent:#60a5fa;       /* blue-400 */
+      --shadow: rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #1e293b 0%, var(--bg) 45%) fixed;
+    }
+    .wrap{max-width:1200px; margin:0 auto; padding: clamp(16px, 3vw, 32px);} 
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-block:8px 24px;}
+    .logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text)}
+    .logo .dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:0 0 0 3px rgba(134,239,172,.15)}
+    h1{font-size:clamp(20px, 3.2vw, 32px); margin:0; letter-spacing:.2px}
+
+    .grid{
+      display:grid; 
+      grid-template-columns:repeat(2, 1fr);
+      gap:clamp(10px, 2vw, 18px);
+    }
+    @media (min-width: 720px){ .grid{ grid-template-columns:repeat(3, 1fr);} }
+
+    .tile{
+      position:relative; 
+      aspect-ratio: 1 / 1; 
+      border-radius:16px;
+      overflow:hidden; 
+      background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) padding-box, 
+                  linear-gradient(160deg, rgba(134,239,172,.4), rgba(96,165,250,.35)) border-box;
+      border:1px solid transparent;
+      box-shadow: 0 10px 30px var(--shadow);
+      isolation:isolate;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      text-decoration:none; color:var(--text);
+    }
+    .tile:hover{ transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.45); border-color: rgba(134,239,172,.6);} 
+
+    .tile .ink{ /* decorative gradient blob */
+      position:absolute; inset:-25% -25% auto auto; width:75%; height:75%;
+      background: radial-gradient( circle at 30% 30%, rgba(134,239,172,.28), transparent 55% ),
+                  radial-gradient( circle at 70% 70%, rgba(96,165,250,.24), transparent 45% );
+      filter: blur(8px); z-index:0; pointer-events:none;
+    }
+
+    .tile .inner{ position:absolute; inset:0; padding:18px; display:flex; flex-direction:column; justify-content:space-between; z-index:1; }
+
+    .kicker{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+    .title{ font-weight:700; line-height:1.05; margin:0; font-size: clamp(18px, 2.4vw, 24px); }
+
+    .icon{
+      width:52%; max-width:180px; align-self:flex-end; opacity:.9;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+    }
+    .icon svg{ width:100%; height:auto; display:block; }
+
+    /* individual color accents per tile */
+    .t-main{ --tile1: #86efac44; --tile2: #60a5fa33; }
+    .t-strechy{ --tile1: #f59e0b44; --tile2: #22c55e33; }
+    .t-dlazba{ --tile1: #60a5fa44; --tile2: #10b98133; }
+    .t-graffiti{ --tile1: #f43f5e55; --tile2: #a78bfa33; }
+    .t-protiskluz{ --tile1: #06b6d455; --tile2: #a7f3d033; }
+    .t-prumysl{ --tile1: #a78bfa55; --tile2: #f59e0b33; }
+
+    .tile[data-theme]{
+      background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) padding-box,
+                  linear-gradient(160deg, var(--tile1), var(--tile2)) border-box;
+    }
+
+    footer{ margin-top:28px; color:var(--muted); font-size:14px; text-align:center;}
+    a.simple{ color: var(--brand-2); text-decoration: none; }
+    a.simple:hover{ text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#" aria-label="BRYUM Čištění – domů">
+        <span class="dot" aria-hidden="true"></span>
+        <h1>BRYUM Čištění – Dlaždicové menu</h1>
+      </a>
+    </header>
+
+    <section class="grid" aria-label="Hlavní nabídka služeb">
+      <!-- 1 Hlavní nabídka -->
+      <a class="tile t-main" data-theme href="/" aria-label="Hlavní nabídka">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">Navigace</p>
+            <h2 class="title">Hlavní nabídka</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Home / grid icon -->
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="6" width="22" height="22" rx="5" fill="#86efac"/>
+              <rect x="36" y="6" width="22" height="22" rx="5" fill="#60a5fa"/>
+              <rect x="6" y="36" width="22" height="22" rx="5" fill="#22c55e"/>
+              <rect x="36" y="36" width="22" height="22" rx="5" fill="#93c5fd"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2 Čištění střech -->
+      <a class="tile t-strechy" data-theme href="/cisteni-strech" aria-label="Čištění střech">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">Služba</p>
+            <h2 class="title">Čištění střech</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Roof icon -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 30 L32 10 L56 30" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+              <rect x="16" y="28" width="32" height="24" rx="3" fill="#22c55e"/>
+              <rect x="28" y="36" width="8" height="12" rx="1.5" fill="#0b1226"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3 Čištění dlažby -->
+      <a class="tile t-dlazba" data-theme href="/cisteni-dlazby" aria-label="Čištění dlažby">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">Služba</p>
+            <h2 class="title">Čištění dlažby</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Pavers icon -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="10" width="20" height="12" rx="2" fill="#60a5fa"/>
+              <rect x="36" y="10" width="20" height="12" rx="2" fill="#10b981"/>
+              <rect x="8" y="28" width="20" height="12" rx="2" fill="#10b981"/>
+              <rect x="36" y="28" width="20" height="12" rx="2" fill="#60a5fa"/>
+              <rect x="8" y="46" width="20" height="12" rx="2" fill="#60a5fa"/>
+              <rect x="36" y="46" width="20" height="12" rx="2" fill="#10b981"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4 Odstranění graffiti -->
+      <a class="tile t-graffiti" data-theme href="/odstraneni-graffiti" aria-label="Odstranění graffiti">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">Služba</p>
+            <h2 class="title">Odstranění graffiti</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Spray can icon -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="18" width="20" height="34" rx="6" fill="#f43f5e"/>
+              <rect x="26" y="10" width="12" height="8" rx="2" fill="#a78bfa"/>
+              <circle cx="32" cy="34" r="6" fill="#0b1226"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5 Protiskluzová ochrana -->
+      <a class="tile t-protiskluz" data-theme href="/protiskluzova-ochrana" aria-label="Protiskluzová ochrana">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">Služba</p>
+            <h2 class="title">Protiskluzová ochrana</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Anti-slip shoe icon -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 36 C18 36, 24 30, 30 30 L46 38 C54 42, 56 46, 56 50 L12 50 C10 50, 8 48, 8 46 C8 42, 10 38, 10 36 Z" fill="#06b6d4"/>
+              <rect x="14" y="44" width="36" height="4" rx="2" fill="#a7f3d0"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6 Průmyslová ochrana betonu (IG CeramFloor) -->
+      <a class="tile t-prumysl" data-theme href="/prumyslova-ochrana-betonu" aria-label="Průmyslová ochrana betonu – IG CeramFloor">
+        <span class="ink" aria-hidden="true"></span>
+        <div class="inner">
+          <div class="top">
+            <p class="kicker">IG CeramFloor</p>
+            <h2 class="title">Průmyslová ochrana betonu</h2>
+          </div>
+          <div class="icon" aria-hidden="true">
+            <!-- Warehouse / slab icon -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 28 L32 12 L56 28 V52 H8 Z" fill="#a78bfa"/>
+              <rect x="14" y="36" width="12" height="10" rx="2" fill="#0b1226"/>
+              <rect x="38" y="36" width="12" height="10" rx="2" fill="#0b1226"/>
+              <rect x="12" y="50" width="40" height="2" fill="#f59e0b"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <footer>
+      <p>Tip: Změňte odkazy <code>href</code> na své podstránky. Kachle jsou plně responzivní a vhodné pro GitHub Pages.</p>
+      <p><a class="simple" href="mailto:info@bryumcisteni.cz?subject=Dlaždicové%20menu">Potřebujete úpravy? Napište nám.</a></p>
+    </footer>
+  </div>
+</body>
+</html>
