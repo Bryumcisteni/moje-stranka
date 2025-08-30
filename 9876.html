@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Orientační kalkulačka ceny | Bryum Čištění</title>
+
+  <!--
+    Moderní, responzivní kalkulačka s formulářem.
+    - Plynulá typografie přes clamp(), čitelné na mobilu i PC
+    - Čistý design, vysoký kontrast, přístupné ovládání
+    - Živý výpočet cen + souhrn
+    - Odeslání přes e‑mail (mailto) s předvyplněným obsahem
+
+    Pozn.: Značkové barvy změníte úpravou CSS proměnných níže.
+  -->
+  <style>
+    :root{
+      /* === Barevné schéma (změňte dle brandu) === */
+      --bg:        #0b0d10;     /* pozadí */
+      --card:      #111418;     /* karta */
+      --muted:     #9aa5b1;     /* sekundární text */
+      --text:      #e6edf3;     /* primární text */
+      --accent:    #22c55e;     /* akční prvky – zelená (mech) */
+      --accent-2:  #16a34a;
+      --border:    #1f242b;
+
+      /* === Typografie === */
+      --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --radius:    14px;
+      --shadow:    0 6px 20px rgba(0,0,0,.35);
+      --focus:     0 0 0 3px color-mix(in oklab, var(--accent) 35%, transparent),
+                   0 0 0 6px color-mix(in oklab, white 10%, transparent);
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7f9; --card:#ffffff; --text:#0b1220; --muted:#5b6574; --border:#e5e7eb;
+        --shadow: 0 12px 20px rgba(16,24,40,.08);
+      }
+    }
+
+    html{
+      /* Plynulá velikost základního písma: min 16px, max 18px */
+      font-size: clamp(16px, 1.2vw + 12px, 18px);
+    }
+    body{
+      font-family: var(--font-sans);
+      background: radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .shell{
+      max-width: 1000px;
+      margin: min(8vw,72px) auto;
+      padding: 0 clamp(16px, 3vw, 28px);
+    }
+
+    .header{
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .eyebrow{
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: .9rem;
+    }
+    h1{
+      font-size: clamp(1.6rem, 2.4vw + 1rem, 2.4rem);
+      line-height: 1.15;
+      margin: 0;
+    }
+    .lead{
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 0;
+      font-size: clamp(1rem, .4vw + .95rem, 1.125rem);
+    }
+
+    .grid{
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1.05fr .95fr;
+      }
+    }
+
+    .card{
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 96%, transparent), var(--card));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(16px, 2.4vw, 24px);
+    }
+
+    .section-title{
+      display: flex; align-items: center; justify-content: space-between;
+      font-weight: 700; margin: 0 0 10px 0;
+      font-size: clamp(1.125rem, .6vw + 1rem, 1.35rem);
+    }
+    .help{
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 2px 0 10px 0;
+    }
+
+    .fields{
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 540px){
+      .fields.cols-2{ grid-template-columns: repeat(2, 1fr); }
+      .fields.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    label{ font-weight: 600; font-size: .98rem; }
+    .control{
+      display: grid; gap: 6px;
+    }
+    .input, .select{
+      appearance: none;
+      width: 100%;
+      padding: 12px 14px;
+      background: color-mix(in oklab, var(--card) 90%, #0000);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .input:focus, .select:focus{ box-shadow: var(--focus); border-color: color-mix(in oklab, var(--accent) 45%, var(--border)); }
+    .input::placeholder{ color: color-mix(in oklab, var(--muted) 70%, transparent); }
+
+    .check{
+      display: flex; gap: 10px; align-items: start; padding: 10px 12px; border: 1px dashed var(--border);
+      border-radius: 12px; background: color-mix(in oklab, var(--card) 96%, transparent);
+    }
+    .check input{ inline-size: 18px; block-size: 18px; margin-top: 2px; accent-color: var(--accent); }
+    .check .label{ font-weight: 600; }
+    .check .note{ color: var(--muted); font-size: .95rem; }
+
+    .total{
+      display: grid; gap: 12px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 14%, var(--card)), var(--card));
+      border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--border));
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .total-line{
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 8px 0; border-bottom: 1px dashed var(--border);
+    }
+    .total-line:last-child{ border-bottom: 0; }
+    .price{
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .015em;
+    }
+    .grand{
+      font-size: clamp(1.25rem, .8vw + 1.1rem, 1.6rem);
+      font-weight: 800;
+    }
+
+    .btn-row{ display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn{
+      appearance: none; border: 0; border-radius: 12px; padding: 12px 16px; font-weight: 700;
+      background: var(--accent); color: #041307; cursor: pointer; transition: transform .06s ease, filter .15s ease;
+    }
+    .btn:hover{ filter: brightness(1.05); }
+    .btn:active{ transform: translateY(1px); }
+    .btn.secondary{ background: transparent; color: var(--text); border: 1px solid var(--border); }
+
+    .muted{ color: var(--muted); font-size: .95rem; }
+
+    .sticky-bar{
+      position: sticky; bottom: 0; z-index: 10; margin-top: 16px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 65%, transparent), var(--card));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px; display: flex; gap: 12px; justify-content: space-between; align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    /* Malá pomoc s rozsahem klikání na mobilu */
+    .check input + .body{ cursor: pointer; }
+
+    /* Přístupnost – viditelný focus */
+    :is(input, select, button, a):focus-visible{ box-shadow: var(--focus); outline: none; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="header">
+      <div class="eyebrow">Kalkulačka</div>
+      <h1>Orientační výpočet ceny</h1>
+      <p class="lead">Vyplňte velikost ploch a zvolte služby. Cenu počítáme průběžně. Výsledek si můžete poslat e‑mailem – dorazí i s rozpisem položek.</p>
+    </header>
+
+    <form id="calcForm" class="grid" novalidate>
+      <!-- LEVÝ sloupec: vstupy -->
+      <section class="card" aria-labelledby="roofTitle">
+        <h2 id="roofTitle" class="section-title">Střecha</h2>
+        <p class="help">Zadejte plochu střechy v m² a vyberte požadované úkony.</p>
+
+        <div class="fields">
+          <div class="control">
+            <label for="roofArea">Velikost střechy (m²)</label>
+            <input id="roofArea" name="roofArea" class="input" type="number" inputmode="decimal"
+                   min="0" step="1" placeholder="např. 120" />
+          </div>
+
+          <div class="check">
+            <input id="roofClean" name="roofClean" type="checkbox" checked />
+            <label class="body" for="roofClean">
+              <div class="label">Čištění a biocid <span class="muted">(88 Kč/m²)</span></div>
+              <div class="note">Tlakové čištění a aplikace biocidu proti růstu řas a mechů.</div>
+            </label>
+          </div>
+
+          <div class="check">
+            <input id="roofSeal" name="roofSeal" type="checkbox" />
+            <label class="body" for="roofSeal">
+              <div class="label">Impregnace <span class="muted">(50 Kč/m²)</span></div>
+              <div class="note">Ochrana povrchu pro delší životnost a menší ulpívání nečistot.</div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="graffitiTitle">
+        <h2 id="graffitiTitle" class="section-title">Graffiti</h2>
+        <p class="help">Zadejte plochu graffiti v m² a vyberte služby.</p>
+
+        <div class="fields">
+          <div class="control">
+            <label for="grafArea">Velikost plochy (m²)</label>
+            <input id="grafArea" name="grafArea" class="input" type="number" inputmode="decimal"
+                   min="0" step="0.1" placeholder="např. 12,5" />
+          </div>
+
+          <div class="check">
+            <input id="grafRemove" name="grafRemove" type="checkbox" />
+            <label class="body" for="grafRemove">
+              <div class="label">Odstranění graffiti <span class="muted">(690 Kč/m²)</span></div>
+              <div class="note">Šetrné odstranění nátěrů a aerosolů podle typu podkladu.</div>
+            </label>
+          </div>
+
+          <div class="check">
+            <input id="grafProtect" name="grafProtect" type="checkbox" />
+            <label class="body" for="grafProtect">
+              <div class="label">Anti‑graffiti ochrana <span class="muted">(300 Kč/m²)</span></div>
+              <div class="note">Prevence pro snadnější odstranění případných budoucích nápisů.</div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRAVÝ sloupec: souhrn + kontakty -->
+      <section class="card" aria-labelledby="summaryTitle">
+        <h2 id="summaryTitle" class="section-title">Souhrn kalkulace</h2>
+        <div class="total" aria-live="polite" aria-atomic="true">
+          <div class="total-line">
+            <div>Střecha</div>
+            <div class="price" id="roofPrice">–</div>
+          </div>
+          <div class="total-line">
+            <div>Graffiti</div>
+            <div class="price" id="grafPrice">–</div>
+          </div>
+          <div class="total-line grand">
+            <div>Celková cena</div>
+            <div class="price" id="grandPrice">0 Kč</div>
+          </div>
+          <div class="muted" id="notes">
+            Ceny jsou orientační; konečná nabídka závisí na stavu povrchu a přístupu k místu práce.
+          </div>
+        </div>
+
+        <div class="fields cols-2" style="margin-top: 14px">
+          <div class="control">
+            <label for="name">Jméno a příjmení</label>
+            <input id="name" name="name" class="input" type="text" autocomplete="name" placeholder="Jan Novák" />
+          </div>
+          <div class="control">
+            <label for="email">E‑mail</label>
+            <input id="email" name="email" class="input" type="email" autocomplete="email" placeholder="jan.novak@email.cz" />
+          </div>
+          <div class="control">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" class="input" type="tel" autocomplete="tel" placeholder="+420 123 456 789" />
+          </div>
+          <div class="control">
+            <label for="location">Místo realizace</label>
+            <input id="location" name="location" class="input" type="text" placeholder="např. Plzeň, Doubravka" />
+          </div>
+        </div>
+
+        <div class="check" style="margin-top: 8px">
+          <input id="consent" name="consent" type="checkbox" />
+          <label class="body" for="consent">
+            <div class="label">Souhlasím se zpracováním údajů za účelem vypracování nabídky</div>
+            <div class="note">Vaše data nepředáváme třetím stranám.</div>
+          </label>
+        </div>
+
+        <div class="btn-row" style="margin-top: 14px">
+          <button type="button" class="btn" id="sendBtn">Odeslat kalkulaci</button>
+        </div>
+      </section>
+
+         </form>
+
+    <p class="muted" style="margin-top: 10px">
+      <noscript>Pro výpočet je potřeba mít povolený JavaScript.</noscript>
+    </p>
+  </div>
+
+  <script>
+    // --- CENÍK (Kč / m²) ---
+    const RATES = {
+      roofClean: 88,   // čištění+biocid
+      roofSeal: 50,    // impregnace
+      grafRemove: 690, // odstranění graffiti
+      grafProtect: 300 // anti-graffiti ochrana
+    };
+
+    // --- Pomocné funkce ---
+    const CZK = new Intl.NumberFormat('cs-CZ', { style: 'currency', currency: 'CZK', currencyDisplay: 'narrowSymbol', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
+    const el = id => document.getElementById(id);
+    const parseNum = (val) => {
+      if (typeof val !== 'string') val = String(val ?? '');
+      // Podpora čárky i tečky
+      val = val.replace(/\s/g, '').replace(',', '.');
+      const n = Number(val);
+      return Number.isFinite(n) && n >= 0 ? n : 0;
+    };
+
+    // --- Elementy ---
+    const inputs = {
+      roofArea: el('roofArea'),
+      roofClean: el('roofClean'),
+      roofSeal: el('roofSeal'),
+      grafArea: el('grafArea'),
+      grafRemove: el('grafRemove'),
+      grafProtect: el('grafProtect'),
+      name: el('name'),
+      email: el('email'),
+      phone: el('phone'),
+      location: el('location'),
+      consent: el('consent')
+    };
+    const out = {
+      roofPrice: el('roofPrice'),
+      grafPrice: el('grafPrice'),
+      grandPrice: el('grandPrice'),
+      grandPriceSticky: el('grandPriceSticky')
+    };
+
+    function calcRoof(){
+      const area = parseNum(inputs.roofArea.value);
+      let sum = 0;
+      if (inputs.roofClean.checked) sum += area * RATES.roofClean;
+      if (inputs.roofSeal.checked)  sum += area * RATES.roofSeal;
+      return { area, sum };
+    }
+    function calcGraf(){
+      const area = parseNum(inputs.grafArea.value);
+      let sum = 0;
+      if (inputs.grafRemove.checked)  sum += area * RATES.grafRemove;
+      if (inputs.grafProtect.checked) sum += area * RATES.grafProtect;
+      return { area, sum };
+    }
+
+    function render(){
+      const roof = calcRoof();
+      const graf = calcGraf();
+      out.roofPrice.textContent = roof.sum > 0 ? CZK.format(Math.round(roof.sum)) : '–';
+      out.grafPrice.textContent = graf.sum > 0 ? CZK.format(Math.round(graf.sum)) : '–';
+      const grand = Math.round(roof.sum + graf.sum);
+      out.grandPrice.textContent = CZK.format(grand);
+      out.grandPriceSticky.textContent = CZK.format(grand);
+      return { roof, graf, grand };
+    }
+
+    // Události
+    document.querySelectorAll('input').forEach(i => i.addEventListener('input', render));
+    document.addEventListener('DOMContentLoaded', render);
+
+    // Sestavení souhrnu pro e-mail / kopírování
+    function buildSummary({roof, graf, grand}){
+      const lines = [];
+      lines.push('Orientační kalkulace');
+      lines.push('====================');
+      const dt = new Date();
+      lines.push(`Datum: ${dt.toLocaleDateString('cs-CZ')} ${dt.toLocaleTimeString('cs-CZ')}`);
+      lines.push('');
+
+      if (roof.area > 0){
+        lines.push('STŘECHA');
+        lines.push(`- Plocha: ${roof.area} m²`);
+        if (inputs.roofClean.checked) lines.push(`- Čištění + biocid (${RATES.roofClean} Kč/m²)`);
+        if (inputs.roofSeal.checked)  lines.push(`- Impregnace (${RATES.roofSeal} Kč/m²)`);
+        lines.push(`= Mezisoučet: ${CZK.format(Math.round(roof.sum))}`);
+        lines.push('');
+      }
+      if (graf.area > 0){
+        lines.push('GRAFFITI');
+        lines.push(`- Plocha: ${graf.area} m²`);
+        if (inputs.grafRemove.checked)  lines.push(`- Odstranění (${RATES.grafRemove} Kč/m²)`);
+        if (inputs.grafProtect.checked) lines.push(`- Anti-graffiti ochrana (${RATES.grafProtect} Kč/m²)`);
+        lines.push(`= Mezisoučet: ${CZK.format(Math.round(graf.sum))}`);
+        lines.push('');
+      }
+
+      lines.push(`CELKEM: ${CZK.format(Math.round(grand))}`);
+      lines.push('');
+      const contacts = [];
+      if (inputs.name.value) contacts.push(`Jméno: ${inputs.name.value}`);
+      if (inputs.email.value) contacts.push(`E-mail: ${inputs.email.value}`);
+      if (inputs.phone.value) contacts.push(`Telefon: ${inputs.phone.value}`);
+      if (inputs.location.value) contacts.push(`Místo realizace: ${inputs.location.value}`);
+      if (contacts.length){
+        lines.push('Kontaktní údaje');
+        lines.push(contacts.join('\n'));
+        lines.push('');
+      }
+      lines.push('Pozn.: Ceny jsou orientační; konečná nabídka závisí na stavu a přístupu.');
+      return lines.join('\n');
+    }
+
+    // Odeslání přes e-mail (mailto)
+    function sendEmail(){
+      const state = render();
+      if (state.grand <= 0){
+        alert('Nejprve prosím vyplňte plochu a zvolte alespoň jednu službu.');
+        return;
+      }
+      if (!inputs.consent.checked){
+        alert('Pro odeslání potřebujeme váš souhlas se zpracováním údajů.');
+        return;
+      }
+      const subject = `Kalkulace z webu – ${new Date().toLocaleDateString('cs-CZ')}`;
+      const body = buildSummary(state);
+
+      // ZMĚŇTE e-mail dle potřeby
+      const to = 'info@bryumcisteni.cz';
+      const url = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Pozn.: mailto otevře uživatelův e-mailový klient
+      window.location.href = url;
+    }
+
+    // Kopírování do schránky
+    async function copySummary(){
+      const state = render();
+      const text = buildSummary(state);
+      try{
+        await navigator.clipboard.writeText(text);
+        alert('Souhrn zkopírován do schránky.');
+      }catch{
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        alert('Souhrn zkopírován do schránky.');
+      }
+    }
+
+    // Ovládací prvky ve dvou místech
+    el('sendBtn').addEventListener('click', sendEmail);
+    el('copyBtn').addEventListener('click', copySummary);
+    el('sendBtnSticky').addEventListener('click', sendEmail);
+    el('copyBtnSticky').addEventListener('click', copySummary);
+  </script>
+
+<script>
+// === Minimální integrace FormSubmit (bez změny designu) ===
+(function(){
+  function byId(id){ return document.getElementById(id); }
+  function findSendBtn(){
+    var b = byId('sendBtn');
+    if (b) return b;
+    var all = Array.prototype.slice.call(document.querySelectorAll('button, input[type="submit"], a[role="button"]'));
+    return all.find(function(el){ return /\bodeslat\b/i.test((el.value||'') + ' ' + (el.textContent||'')); });
+  }
+
+  var els = {
+    email: byId('email'),
+    phone: byId('phone'),
+    place: byId('place'),
+    gdpr: byId('gdpr'),
+    roofArea: byId('roofArea'),
+    roofClean: byId('roofClean'),
+    roofImpreg: byId('roofImpreg'),
+    graffitiArea: byId('graffitiArea'),
+    graffitiRemoval: byId('graffitiRemoval'),
+    antiGraffiti: byId('antiGraffiti'),
+    total: byId('grandTotal')
+  };
+
+  // Odebrat blok "Jméno a příjmení" (pokud existuje) – bez zásahu do stylů
+  try{
+    var lbls = Array.prototype.slice.call(document.querySelectorAll('label'));
+    var nameLabel = lbls.find(function(l){ return /jméno\s*a\s*příjmení/i.test(l.textContent||''); });
+    if (nameLabel){
+      var wrap = nameLabel.closest ? nameLabel.closest('div, p, .row, .field, .form-group') : nameLabel.parentNode;
+      if (wrap && wrap.parentNode) wrap.parentNode.removeChild(wrap); else nameLabel.remove();
+    }
+    var nameField = byId('name'); if (nameField && nameField.parentNode) nameField.parentNode.removeChild(nameField);
+  }catch(_){}
+
+  // Vytvořit souhrn kalkulace (čte stávající hodnoty/checkboxy a text celkové ceny)
+  function n(el){ if(!el) return 0; var v=(el.value||'').replace(',', '.'); var x=parseFloat(v); return isNaN(x)||x<0?0:x; }
+  function fmt(x){ try{ return new Intl.NumberFormat('cs-CZ',{style:'currency',currency:'CZK',maximumFractionDigits:0}).format(x);}catch(_){return x+' Kč';} }
+  function buildSummary(){
+    var lines = [];
+    var rA = n(els.roofArea), gA = n(els.graffitiArea);
+    var PRICE = { roofClean:88, roofImpreg:50, graffitiRemoval:690, antiGraffiti:300 };
+    function add(label, ok, qty, unit){ if(ok){ lines.push(label+': '+fmt(Math.round(qty*unit))); } }
+    add('Střecha – čištění a biocid', els.roofClean && els.roofClean.checked, rA, PRICE.roofClean);
+    add('Střecha – impregnace', els.roofImpreg && els.roofImpreg.checked, rA, PRICE.roofImpreg);
+    add('Graffiti – odstranění', els.graffitiRemoval && els.graffitiRemoval.checked, gA, PRICE.graffitiRemoval);
+    add('Graffiti – anti‑graffiti ochrana', els.antiGraffiti && els.antiGraffiti.checked, gA, PRICE.antiGraffiti);
+    var totalText = (els.total && els.total.textContent) ? els.total.textContent.trim() : '';
+    var out = [];
+    out.push('Souhrn kalkulace');
+    if (rA) out.push('Plocha střechy: '+rA+' m²');
+    if (gA) out.push('Plocha graffiti: '+gA+' m²');
+    if (lines.length) out = out.concat(lines);
+    if (totalText) out.push('Celkem: '+totalText);
+    return out.join('\n');
+  }
+
+  function submitToFormSubmit(){
+    if (els.gdpr && !els.gdpr.checked){ alert('Prosím potvrď souhlas se zpracováním údajů.'); return; }
+    if (!els.email || !els.email.value){ alert('Vyplň prosím e‑mail.'); if (els.email) els.email.focus(); return; }
+
+    var f = document.createElement('form');
+    f.action = 'https://formsubmit.co/info@bryumcisteni.cz';
+    f.method = 'POST';
+    f.style.display = 'none';
+
+    function hid(name, val){ var i=document.createElement('input'); i.type='hidden'; i.name=name; i.value=val||''; f.appendChild(i); }
+    function add(name, val){ var i=document.createElement('input'); i.type='hidden'; i.name=name; i.value=val||''; f.appendChild(i); }
+
+    add('email', els.email ? els.email.value : '');
+    add('_replyto', els.email ? els.email.value : '');
+    add('telefon', els.phone ? els.phone.value : '');
+    add('misto_realizace', els.place ? els.place.value : '');
+
+    var ta = document.createElement('textarea'); ta.name='souhrn'; ta.value=buildSummary(); f.appendChild(ta);
+
+    hid('_subject','Kalkulace z webu – Bryum Čištění');
+    hid('_template','table');
+    var honey = document.createElement('input'); honey.type='text'; honey.name='_honey'; honey.style.display='none'; f.appendChild(honey);
+    // Volitelně: přesměrování po odeslání (musí být celé URL)
+    // hid('_next','https://bryumcisteni.cz/dekujeme.html');
+    // Volitelně: vypnout captcha (nedoporučeno kvůli spamu)
+    // hid('_captcha','false');
+
+    document.body.appendChild(f);
+    f.submit();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = findSendBtn();
+    if (btn) btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); submitToFormSubmit(); });
+  });
+})();
+</script>
+</body>
+</html>
