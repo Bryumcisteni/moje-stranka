@@ -48,7 +48,7 @@
     .hero-left img {
       height: 150px;
       width: auto;
-	border-radius: 20px; /* zaoblení rohů */
+      border-radius: 20px; /* zaoblení rohů */
     }
     .hero-left h1 {
       margin: 0;
@@ -80,8 +80,9 @@
 
     .grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
       gap: clamp(16px, 2.5vw, 26px); 
+      justify-items: center;
     }
 
     .tile {
@@ -93,6 +94,8 @@
       transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
       isolation: isolate;
       animation: fadeIn 1s ease;
+      width: 100%;
+      max-width: 340px;
     }
     .tile:hover { transform: translateY(-6px) scale(1.02); background: var(--card-hover); box-shadow: 0 18px 60px rgba(0,0,0,.5); }
 
@@ -154,6 +157,16 @@
       .phone {
         font-size: 1rem;
         margin-top: 12px;
+      }
+    }
+
+    /* menší tlačítko na telefonech */
+    @media (max-width: 480px) {
+      .floating-btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+        bottom: 14px;
+        right: 14px;
       }
     }
   </style>
