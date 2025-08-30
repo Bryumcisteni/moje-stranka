@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BRYUM Čištění – Profesionální čištění povrchů nano přípravky</title>
+  <meta name="description" content="Moderní a profesionální prezentace služeb BRYUM Čištění" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #f1f5f9;
+      --muted: #cbd5e1;
+      --brand: #22c55e;
+      --brand-2: #86efac;
+      --glass: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.12);
+      --card: rgba(13,24,45,0.55);
+      --card-hover: rgba(16,27,52,0.65);
+      --dark-gray: #333;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      color: var(--text);
+      background: #000 url('pozadi.png') center/cover fixed no-repeat;
+    }
+
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
+
+    /* Horní část s logem, H1 a telefonem */
+    .hero {
+      padding: 10px 6px 20px; /* menší horní mezera */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .hero-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-left img {
+      height: 150px;
+      width: auto;
+      border-radius: 20px; /* zaoblení rohů */
+    }
+    .hero-left h1 {
+      margin: 0;
+      font-size: clamp(26px, 5vw, 54px);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: .2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.3); /* jemný stín pro čitelnost */
+      animation: fadeInUp 1.2s ease;
+      color: var(--dark-gray); /* tmavě šedá */
+    }
+    .phone {
+      text-decoration: none; 
+      font-weight: 800;
+      color: #0f172a; 
+      padding: 10px 16px; 
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 8px 24px rgba(34,197,94,.45);
+      transition: transform .3s ease, box-shadow .3s ease;
+      animation: pulse 2s infinite;
+      font-size: 1.4rem; /* větší na PC */
+      white-space: nowrap;
+    }
+    .phone:hover { 
+      transform: translateY(-2px) scale(1.05); 
+      box-shadow: 0 12px 30px rgba(34,197,94,.6); 
+    }
+
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: clamp(16px, 2.5vw, 26px); 
+      justify-items: center;
+    }
+
+    .tile {
+      position: relative; aspect-ratio: 16/10; border-radius: 18px; overflow: hidden;
+      background: var(--card); border: 2px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      text-decoration: none; color: var(--text);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+      transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+      isolation: isolate;
+      animation: fadeIn 1s ease;
+      width: 100%;
+      max-width: 340px;
+    }
+    .tile:hover { 
+      transform: translateY(-6px) scale(1.02); 
+      background: var(--card-hover); 
+      box-shadow: 0 18px 60px rgba(0,0,0,.5); 
+    }
+
+    .photo { position:absolute; inset:0; z-index:0; }
+    .photo img { 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      filter: brightness(1) contrast(1.05) saturate(1.02); /* světlejší výchozí stav */
+      transform: scale(1.03); 
+      transition: transform .35s ease, filter .35s ease; 
+    }
+    .tile:hover .photo img { 
+      transform: scale(1.07); 
+      filter: brightness(1.1) contrast(1.08) saturate(1.08); /* zesvětlení při hoveru */
+    }
+
+    .overlay { position:absolute; inset:0; z-index:1; background:
+      linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.25) 70%),
+      radial-gradient(600px 220px at 70% -20%, rgba(134,239,172,.12), transparent 60%);
+      pointer-events:none; }
+
+    .inner { position:absolute; inset:0; z-index:2; display:flex; align-items:flex-end; padding:18px; }
+    .title { font-size: clamp(20px, 1.6vw, 24px); font-weight: 700; text-shadow: 0 3px 14px rgba(0,0,0,.75); margin:0; }
+
+    footer { margin-top: 30px; text-align:center; font-size:14px; color: var(--muted); animation: fadeIn 1.5s ease; }
+
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #0f172a;
+      font-weight: 800;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 12px 32px rgba(34,197,94,.6);
+      animation: pulse 2s infinite;
+      z-index: 1000;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .floating-btn:hover {
+      transform: translateY(-3px) scale(1.07);
+      box-shadow: 0 16px 44px rgba(34,197,94,.75);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-left {
+        flex-direction: column;
+      }
+      .hero-left img {
+        height: 120px;
+      }
+      .phone {
+        font-size: 1rem;
+        margin-top: 12px;
+      }
+    }
+
+    /* menší tlačítko na telefonech */
+    @media (max-width: 480px) {
+      .floating-btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+        bottom: 14px;
+        right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-left">
+        <img src="logo.webp" alt="BRYUM Čištění – logo" />
+        <h1>Vítejte u BRYUM Čištění</h1>
+      </div>
+      <a class="phone" href="tel:+420779522522" aria-label="Zavolat na +420 779 522 522">
+        +420&nbsp;779&nbsp;522&nbsp;522
+      </a>
+    </section>
+
+    <section class="grid" aria-label="Nabídka služeb">
+      <a class="tile" href="/cisteni-strech" aria-label="Čištění střechy a nano impregnace">
+        <div class="photo"><img src="cisteni.webp" alt="Čištění střechy a nano impregnace" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Čištění střechy a nano impregnace</h2></div>
+      </a>
+
+      <a class="tile" href="/cisteni-dlazby" aria-label="Čištění dlažby a nano impregnace">
+        <div class="photo"><img src="dlazba.jfif" alt="Čištění dlažby" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Čištění dlažby a nano impregnace</h2></div>
+      </a>
+
+      <a class="tile" href="/odstraneni-graffiti" aria-label="Odstranění graffiti a anti-graffiti">
+        <div class="photo"><img src="graffiti.png" alt="Odstranění graffiti" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Odstranění graffiti a anti-graffiti ochrana</h2></div>
+      </a>
+
+      <a class="tile" href="/protiskluzova-ochrana" aria-label="Protiskluzová ochrana podlah">
+        <div class="photo"><img src="protiskluz.jfif" alt="Protiskluzová ochrana" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Protiskluzová ochrana</h2></div>
+      </a>
+
+      <a class="tile" href="/prumyslova-ochrana-betonu" aria-label="Průmyslová ochrana betonu">
+        <div class="photo"><img src="betonová podlaha.jfif" alt="Průmyslová ochrana betonu" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Průmyslová ochrana betonu</h2></div>
+      </a>
+
+      <a class="tile" href="/kontakt" aria-label="Kontakty">
+        <div class="photo"><img src="kontakty.jfif" alt="Kontakty" /></div>
+        <div class="overlay"></div>
+        <div class="inner"><h2 class="title">Kontakty</h2></div>
+      </a>
+    </section>
+
+    <footer>
+      © 2025 BRYUM Čištění
+    </footer>
+  </div>
+
+  <a href="/kalkulace" class="floating-btn">Spočítat cenu</a>
+</body>
+</html>
