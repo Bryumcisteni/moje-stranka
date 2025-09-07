@@ -1,42 +1,63 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Děkujeme za poptávku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            display: inline-block;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        a.button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #2e8b57;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        a.button:hover {
-            background-color: #246b45;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Děkujeme – BRYUM Čištění</title>
+  <meta name="description" content="Děkujeme za odeslání poptávky. Ozveme se vám co nejdříve.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+      --dark: #0f172a;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; overflow-x: hidden; }
+
+    /* HERO */
+    .hero { position: relative; display: flex; align-items: center; justify-content: center; text-align: center;
+      height: 30vh; min-height: 200px; background: url('images/pozadi.webp') center/cover no-repeat; color: white; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 40px 20px 20px; }
+    .hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 20px; text-shadow: 0 3px 8px rgba(0,0,0,.5); }
+    .logo { max-width: 100px; margin: 0 auto 7px; display: block; }
+
+    /* Content */
+    .content { max-width: 800px; margin: 40px auto; padding: 0 16px; text-align: center; }
+    .content p { font-size: 1.1rem; margin-bottom: 25px; }
+
+    .back-btn {
+      display:inline-block; padding:12px 22px; border-radius:999px; font-size:1.1rem; font-weight:700;
+      background:#fff; color:var(--brand); border:2px solid var(--brand); text-decoration:none;
+      box-shadow:0 4px 12px rgba(0,0,0,.1); transition:transform .3s, box-shadow .3s, background .3s, color .3s;
+    }
+    .back-btn:hover { background:var(--brand); color:#fff; transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.25); }
+
+    footer { text-align:center; font-size:14px; color:#555; margin:40px 0 20px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Děkujeme za vaši poptávku!</h1>
-        <p>Brzy se vám ozveme.</p>
-        <a href="https://bryumcisteni.cz" class="button">Zpět na hlavní stránku</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
+      <h1>Děkujeme</h1>
     </div>
+  </section>
+
+  <!-- OBSAH -->
+  <section class="content">
+    <p>Vaše poptávka byla úspěšně odeslána.<br>Ozveme se vám co nejdříve.</p>
+    <a href="/index.html" class="back-btn">← Zpět na hlavní stránku</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Bryum Čištění. Všechna práva vyhrazena.
+  </footer>
 </body>
 </html>
