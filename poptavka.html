@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalkulačka poptávky – BRYUM Čištění</title>
+  <meta name="description" content="Spočítejte si cenu za čištění střech, dlažby, odstranění graffiti, protiskluzovou ochranu nebo laminaci podlah. Odešlete poptávku online.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+      --dark: #0f172a;
+      --highlight: #dc2626;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; overflow-x: hidden; }
+
+    /* HERO */
+    .hero { position: relative; display: flex; align-items: center; justify-content: center; text-align: center;
+      height: 30vh; min-height: 200px; background: url('images/pozadi.webp') center/cover no-repeat; color: white; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 40px 20px 20px; }
+    .hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 20px; text-shadow: 0 3px 8px rgba(0,0,0,.5); }
+    .logo { max-width: 100px; margin: 0 auto 7px; display: block; }
+
+    .content { max-width:800px; margin:40px auto; padding:0 16px; }
+    .content h2 { font-size:1.6rem; margin:20px 0 15px; color:var(--dark); }
+    .box { background:#f9f9f9; padding:20px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.1); margin-bottom:24px; }
+
+    label { display:block; margin-bottom:10px; font-weight:600; }
+    input[type="number"], input[type="email"], input[type="tel"], textarea {
+      width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:15px; font-size:1rem;
+    }
+    textarea { min-height:100px; resize:vertical; }
+
+    .checkbox { margin-bottom:10px; }
+    .checkbox label { font-weight:400; }
+
+    .total { font-size:1.3rem; font-weight:700; color:var(--brand); margin:20px 0; text-align:center; }
+
+    .btn { display:inline-block; padding:12px 22px; border-radius:999px; font-size:1.1rem; font-weight:700;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; text-decoration:none; border:none; cursor:pointer;
+      box-shadow:0 6px 16px rgba(34,197,94,.45); transition:transform .3s ease, box-shadow .3s ease; }
+    .btn:hover { transform:translateY(-2px) scale(1.05); box-shadow:0 10px 26px rgba(34,197,94,.6); }
+
+    .back-btn {
+      display:inline-block; padding:12px 22px; border-radius:999px; font-size:1rem; font-weight:600;
+      background:#fff; color:var(--brand); border:2px solid var(--brand); text-decoration:none;
+      box-shadow:0 4px 12px rgba(0,0,0,.1); transition:transform .3s, box-shadow .3s, background .3s, color .3s;
+    }
+    .back-btn:hover { background:var(--brand); color:#fff; transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.25); }
+
+    .gdpr { font-size:0.85rem; color:#555; text-align:center; margin:15px 0; }
+
+    footer { text-align:center; font-size:14px; color:#555; margin:40px 0 20px; }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
+      <h1>Kalkulačka poptávky</h1>
+    </div>
+  </section>
+
+  <!-- OBSAH -->
+  <section class="content">
+    <form action="https://formsubmit.co/info@bryumcisteni.cz" method="POST" class="box" id="calc-form">
+
+      <h2>Kalkulace poptávky</h2>
+      <p style="margin-bottom:20px;font-weight:600;">Zaškrtněte služby, o které máte zájem:</p>
+
+      <h2>Čištění střechy</h2>
+      <input type="number" id="plocha_strecha" name="plocha_strecha" placeholder="Zadejte plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Čištění střechy" data-price="59" data-group="strecha"> Čištění střechy (59 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Aplikace biocidu" data-price="29" data-group="strecha"> Aplikace biocidu (29 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Nano impregnace" data-price="49" data-group="strecha"> Nano keramická impregnace (49 Kč/m²)</label>
+      </div>
+
+      <h2>Čištění dlažby</h2>
+      <input type="number" id="plocha_dlazba" name="plocha_dlazba" placeholder="Zadejte plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Čištění dlažby" data-price="79" data-group="dlazba"> Čištění dlažby (79 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Impregnace dlažby" data-price="49" data-group="dlazba"> Impregnace dlažby (49 Kč/m²)</label>
+      </div>
+
+      <h2>Odstranění graffiti</h2>
+      <input type="number" id="plocha_graffiti" name="plocha_graffiti" placeholder="Zadejte plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Odstranění graffiti" data-price="300" data-group="graffiti"> Odstranění graffiti (od 300 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Anti-graffiti ochrana" data-price="95" data-group="graffiti"> Anti-graffiti ochrana (95 Kč/m²)</label>
+      </div>
+
+      <h2>Protiskluzová ochrana</h2>
+      <input type="number" id="plocha_protiskluz" name="plocha_protiskluz" placeholder="Zadejte plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Protiskluzová ochrana" data-price="180" data-group="protiskluz"> Protiskluzová ochrana (180 Kč/m²)</label>
+      </div>
+
+      <h2>Laminace betonové podlahy</h2>
+      <input type="number" id="plocha_laminace" name="plocha_laminace" placeholder="Zadejte plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Laminace podlahy" data-price="250" data-group="laminace"> Laminace betonové podlahy (250 Kč/m²)</label>
+      </div>
+
+      <div class="total" id="total">Orientační celková cena: 0 Kč</div>
+      <input type="hidden" name="Orientační celková cena" id="hiddenTotal">
+
+      <h2>Vaše údaje</h2>
+      <input type="email" name="Email" placeholder="Váš e-mail" required>
+      <input type="tel" name="Telefon" placeholder="Telefon (nepovinné)">
+      <textarea name="Doplňující informace" placeholder="Doplňující informace k poptávce" required></textarea>
+
+      <!-- skryté parametry pro FormSubmit -->
+      <input type="hidden" name="_subject" value="Nová poptávka z webu Bryum Čištění">
+      <input type="hidden" name="_template" value="table">
+
+      <p class="gdpr">Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem vytvoření poptávky.</p>
+
+      <button type="submit" class="btn">Odeslat poptávku</button>
+    </form>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="/index.html#sluzby" class="back-btn">← Zpět na hlavní stránku</a>
+    </div>
+  </section>
+
+  <footer>© 2025 Bryum Čištění. Všechna práva vyhrazena.</footer>
+
+  <script>
+    const form = document.getElementById('calc-form');
+    const totalEl = document.getElementById('total');
+    const hiddenTotal = document.getElementById('hiddenTotal');
+
+    function calculateTotal() {
+      let total = 0;
+      const checkboxes = form.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          const price = parseFloat(cb.dataset.price);
+          const group = cb.dataset.group;
+          const input = document.getElementById('plocha_' + group);
+          const qty = parseFloat(input.value) || 0;
+          total += price * qty;
+        }
+      });
+      const text = 'Orientační celková cena: ' + total.toLocaleString('cs-CZ') + ' Kč';
+      totalEl.textContent = text;
+      hiddenTotal.value = total.toLocaleString('cs-CZ') + ' Kč';
+    }
+
+    form.addEventListener('input', calculateTotal);
+  </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Čištění dlažby – BRYUM Čištění</title>
+  <meta name="description" content="Profesionální čištění venkovní dlažby s použitím biocidů a nano impregnace. Obnovíme vzhled a prodloužíme životnost vaší dlažby." />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Čištění dlažby – BRYUM Čištění" />
+  <meta property="og:description" content="Profesionální čištění venkovní dlažby s použitím biocidů a nano impregnace. Obnovíme vzhled a prodloužíme životnost vaší dlažby." />
+  <meta property="og:image" content="https://bryumcisteni.cz/images/dlazba.webp" />
+  <meta property="og:url" content="https://bryumcisteni.cz/cisteni-dlazby.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Čištění dlažby – BRYUM Čištění" />
+  <meta name="twitter:description" content="Profesionální čištění venkovní dlažby s použitím biocidů a nano impregnace. Obnovíme vzhled a prodloužíme životnost vaší dlažby." />
+  <meta name="twitter:image" content="https://bryumcisteni.cz/images/dlazba.webp" />
+
+  <!-- Structured data (JSON-LD) pro Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Čištění dlažby",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "BRYUM Čištění",
+      "image": "https://bryumcisteni.cz/images/logo.webp",
+      "url": "https://bryumcisteni.cz/",
+      "telephone": "+420779522522",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CZ"
+      }
+    },
+    "description": "Profesionální čištění venkovní dlažby s použitím biocidů a nano impregnace. Obnovíme vzhled a prodloužíme životnost vaší dlažby.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Česká republika"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+      --dark: #0f172a;
+      --highlight: #dc2626;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero { position: relative; display: flex; align-items: center; justify-content: center; text-align: center;
+      height: 40vh; min-height: 250px; background: url('images/pozadi.webp') right top/cover no-repeat; color: white; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 40px 20px 20px; }
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 8px rgba(0,0,0,.5);
+    }
+    .logo {
+      max-width: 100px;
+      width: auto;
+      height: auto;
+      margin: 0 auto 7px;
+      display: block;
+    }
+
+    .phone, .floating-btn {
+      display: inline-block; padding: 12px 22px; border-radius: 999px; font-size: 1.3rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; text-decoration: none;
+      box-shadow: 0 6px 16px rgba(34,197,94,.45); transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .phone:hover, .floating-btn:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 10px 26px rgba(34,197,94,.6); }
+
+    @media (max-width: 600px) {
+      .phone, .floating-btn { padding: 8px 16px; font-size: 1rem; }
+      .hero { height: 28vh; min-height: 180px; }
+      .hero h1 { font-size: 22px; }
+    }
+
+    /* Content */
+    .content { max-width: 1000px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
+    .content h2 {
+      font-size: 1.6rem;
+      margin: 30px 0 15px;
+      color: var(--dark);
+    }
+    .content p, .content li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .highlight { color: var(--highlight); font-weight: 700; }
+
+    /* Two-column */
+    .two-col { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; margin-top: 20px; }
+    .two-col .col { flex: 1 1 300px; }
+    .two-col .img-col img { width: 100%; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+
+    .img-mobile { display: none; }
+    .img-mobile img {
+      width: 90%;
+      max-width: 320px;
+      margin: 0 auto;
+      display: block;
+      height: auto;
+    }
+.back-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #fff;                 /* bílé podbarvení */
+  color: var(--brand, #22c55e);     /* brand green nebo fallback */
+  border: 2px solid var(--brand, #22c55e);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+}
+.back-btn:hover {
+  background: var(--brand, #22c55e);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+    .content ul { padding-left: 28px; margin-bottom: 20px; list-style: disc; }
+
+    @media (max-width: 768px) {
+      .two-col { flex-direction: column; }
+      .img-col { display: none; }
+      .img-mobile { display: block; margin-top: 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .content h2 { font-size: 1.2rem; }
+      .content p, .content li { font-size: 0.95rem; }
+      .content ul { padding-left: 22px; }
+    }
+
+    /* Floating button */
+    .floating-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+      70% { transform: scale(1.07); box-shadow: 0 0 0 18px rgba(34,197,94,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    /* Footer */
+    footer { text-align:center; font-size:14px; color:#555; margin:40px 0 20px; }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
+      <h1>Čištění dlažby</h1>
+      <a href="tel:+420779522522" class="phone">+420&nbsp;779&nbsp;522&nbsp;522</a>
+    </div>
+  </section>
+
+  <!-- OBSAH -->
+  <section class="content">
+    <h2>Proč objednat čištění dlažby?</h2>
+    <div class="two-col">
+      <div class="col text-col">
+        <ul>
+          <li><strong>Zarostlá dlažba mechem a plevelem</strong> působí nevzhledně a zvyšuje riziko uklouznutí.</li>
+          <li><strong>Nečistoty, olejové skvrny a usazeniny</strong> pronikají hluboko do povrchu a zhoršují jeho životnost.</li>
+          <li><strong>Profesionální čištění</strong> vrací dlažbě původní barvu a vzhled – bez poškození spár či materiálu.</li>
+          <li><strong>Speciální nano impregnace</strong> chrání povrch proti nasákavosti a růstu nečistot po dobu několika let.</li>
+          <li><strong>Bezpečnější povrch</strong> – odstraněním mechu a kluzkého povlaku snížíte riziko uklouznutí.</li>
+        </ul>
+        <div class="img-mobile">
+          <img src="images/dlazba.webp" alt="Čištění znečištěné dlažby před a po">
+        </div>
+        <p><strong>Čistá dlažba zvýší estetickou hodnotu vašeho domu, zahrady nebo firemních prostor a zároveň prodlouží její životnost.</strong></p>
+      </div>
+      <div class="col img-col">
+        <img src="images/dlazba.webp" alt="Čištění znečištěné dlažby před a po">
+      </div>
+    </div>
+
+    <h2>Ceník</h2>
+    <ul>
+      <li><strong>Čištění dlažby:</strong> od 69 Kč/m²</li>
+      <li><strong>Aplikace biocidu na povrch:</strong> od 29 Kč/m²</li>
+      <li><strong>Impregnace dlažby nano přípravkem:</strong> od 49 Kč/m²</li>
+    </ul>
+
+    <div style="text-align:center;margin-top:30px;">
+      <a href="/poptavka.html" class="phone">Poptávka čištění dlažby</a>
+    </div>
+<div style="text-align:center; margin-top:15px;">
+  <a href="/index.html#sluzby" class="back-btn" aria-label="Zpět na hlavní stránku">← Zpět na hlavní stránku</a>
+</div>
+  </section>
+
+  <!-- Floating Button -->
+  <a href="/poptavka.html" class="floating-btn">Spočítejte si cenu</a>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Bryum Čištění. Všechna práva vyhrazena.
+  </footer>
+</body>
+</html>
