@@ -55,6 +55,22 @@
       background:#fff; color:var(--brand); border:2px solid var(--brand); text-decoration:none;
       box-shadow:0 4px 12px rgba(0,0,0,.1); transition:transform .3s, box-shadow .3s, background .3s, color .3s;
     }
+    .phone {
+  display: inline-block; 
+  padding: 12px 22px; 
+  border-radius: 999px; 
+  font-size: 1.3rem; 
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)); 
+  color: #fff; 
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(34,197,94,.45); 
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.phone:hover {
+  transform: translateY(-2px) scale(1.05); 
+  box-shadow: 0 10px 26px rgba(34,197,94,.6);
+}
     .back-btn:hover { background:var(--brand); color:#fff; transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.25); }
 
     .gdpr { font-size:0.85rem; color:#555; text-align:center; margin:15px 0; }
@@ -64,14 +80,16 @@
 </head>
 <body>
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-     <a href="https://bryumcisteni.cz/">
-  <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
-</a>
-      <h1>Spočítejte si cenu</h1>
-    </div>
-  </section>
+ <section class="hero">
+  <div class="hero-content">
+    <a href="https://bryumcisteni.cz/">
+      <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
+    </a>
+    <h1>Spočítejte si cenu</h1>
+    <!-- Telefon jako na stránce Odstranění graffiti -->
+    <a href="tel:+420779522522" class="phone">+420&nbsp;779&nbsp;522&nbsp;522</a>
+  </div>
+</section>
 
   <!-- OBSAH -->
   <section class="content">
