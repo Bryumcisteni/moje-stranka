@@ -55,28 +55,25 @@
     }
     @media (min-width: 768px) {
       .contact-block {
-        flex-direction: row; /* na PC vše vedle sebe */
+        flex-direction: row;
         justify-content: center;
       }
     }
 
-    .phone, .social-links a {
+    .phone {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       padding: 12px 22px;
       border-radius: 999px;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #fff;
       text-decoration: none;
-      transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
-    }
-    .phone {
-      font-size: 1.2rem;
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       box-shadow: 0 6px 16px rgba(34,197,94,.45);
+      transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
     }
     .phone:hover { transform: scale(1.05); filter: brightness(1.1); }
 
@@ -87,10 +84,21 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      transition: transform .3s ease, filter .3s ease;
+    }
     .social-links a.youtube { background: #FF0000; }
     .social-links a.facebook { background: #1877F2; }
-    .social-links a:hover { transform: scale(1.05); filter: brightness(1.1); }
-    .social-links svg { width: 20px; height: 20px; }
+    .social-links a:hover { transform: scale(1.1); filter: brightness(1.1); }
+    .social-links svg { width: 22px; height: 22px; }
 
     /* GRID */
     .grid {
@@ -186,14 +194,12 @@
             89.6 10.3 131.9c6.3 23.7 24.9 42.3 48.6 48.6C117.2 448 288 448 288 
             448s170.8 0 213.1-11.5c23.7-6.3 42.3-24.9 48.6-48.6C560.1 345.6 560 
             256 560 256s.1-89.6-10.3-131.9zM232 334V178l142 78-142 78z"/></svg>
-            YouTube
           </a>
           <a href="https://facebook.com/BryumCisteni" target="_blank" aria-label="Facebook" class="facebook">
             <svg viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 
             12.42-50.06 52.24-50.06h40.42V6.26S293.32 
             0 268.24 0c-73.22 0-121.26 44.38-121.26 
             124.72v70.62H86.41V288h60.57v224h92.66V288z"/></svg>
-            Facebook
           </a>
         </div>
       </div>
