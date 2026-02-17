@@ -14,42 +14,59 @@
       --brand: #22c55e;
       --brand-2: #16a34a;
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; overflow-x: hidden; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: #fff;
+      overflow-x: hidden;
+    }
 
     /* HERO */
-   .hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  min-height: 40vh;
-  height: auto;
-  padding: 28px 0;
-
-  background: url('images/pozadi.webp') right top/cover no-repeat;
-  color: white;
-}
-
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 40vh;
+      min-height: 250px;
+      background: url('images/pozadi.webp') right top/cover no-repeat;
+      color: white;
     }
+
     .hero::after {
       content: "";
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,.35);
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .35);
     }
+
     .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1000px; padding: 20px;
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      padding: 20px;
     }
+
     .hero h1 {
       font-size: clamp(24px, 4vw, 36px);
       font-weight: 800;
       margin-bottom: 20px;
-      text-shadow: 0 3px 8px rgba(0,0,0,.5);
+      text-shadow: 0 3px 8px rgba(0, 0, 0, .5);
     }
-    .logo { max-width: 100px; margin: 0 auto 7px; display: block; }
+
+    .logo {
+      max-width: 100px;
+      margin: 0 auto 7px;
+      display: block;
+    }
 
     /* Kontakt blok */
     .contact-block {
@@ -58,15 +75,11 @@
       align-items: center;
       gap: 14px;
     }
-  @media (min-width: 768px) {
-  .contact-block {
-    flex-direction: column;
-    justify-content: center;
-  }
-@media (max-width: 600px){
-  .email{ padding: 8px 14px; font-size: .95rem; }
-}
 
+    @media (min-width: 768px) {
+      .contact-block {
+        flex-direction: row;
+        justify-content: center;
       }
     }
 
@@ -82,58 +95,23 @@
       color: #fff;
       text-decoration: none;
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 6px 16px rgba(34,197,94,.45);
+      box-shadow: 0 6px 16px rgba(34, 197, 94, .45);
       transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
     }
-    .phone:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-    .email{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255,255,255,.14);
-  border: 1px solid rgba(255,255,255,.22);
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-  transition: transform .3s ease, filter .3s ease, background .3s ease;
-  backdrop-filter: blur(6px);
-}
-.email:hover{
-  transform: scale(1.05);
-  filter: brightness(1.06);
-  background: rgba(255,255,255,.18);
-}
+    .phone:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
 
     /* Social links */
-   .social-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-}
-.social-label{
-  font-size:.85rem;
-  font-weight:600;
-  line-height:1.15;
-  color: rgba(255,255,255,.92);
-  text-shadow: 0 2px 6px rgba(0,0,0,.55);
-  text-align:center;
-  max-width: 170px;
-}
-
-}
-
     .social-links {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -145,10 +123,24 @@
       text-decoration: none;
       transition: transform .3s ease, filter .3s ease;
     }
-    .social-links a.youtube { background: #FF0000; }
-    .social-links a.facebook { background: #1877F2; }
-    .social-links a:hover { transform: scale(1.1); filter: brightness(1.1); }
-    .social-links svg { width: 22px; height: 22px; }
+
+    .social-links a.youtube {
+      background: #FF0000;
+    }
+
+    .social-links a.facebook {
+      background: #1877F2;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
+
+    .social-links svg {
+      width: 22px;
+      height: 22px;
+    }
 
     /* GRID */
     .grid {
@@ -161,36 +153,85 @@
       grid-template-columns: 1fr;
       justify-items: center;
     }
+
     @media (min-width: 600px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (min-width: 992px) {
-      .grid { grid-template-columns: repeat(3, minmax(280px, 1fr)); justify-content: center; }
+      .grid {
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        justify-content: center;
+      }
     }
+
     .tile {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
       color: #fff;
-      box-shadow: 0 12px 30px rgba(0,0,0,.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
       transition: transform .25s ease, box-shadow .25s ease;
       aspect-ratio: 16/7;
       min-height: 120px;
       width: 100%;
       max-width: 400px;
     }
-    .tile:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 18px 45px rgba(0,0,0,.45); }
+
+    .tile:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
+    }
+
     .tile .photo img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
       transition: transform .35s ease;
     }
-    .tile:hover .photo img { transform: scale(1.06); }
-    .tile .overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.55) 80%); }
-    .tile .inner { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:16px; z-index:2; }
-    .tile h2 { font-size:1.1rem; font-weight:700; margin-bottom:6px; text-shadow: 0 2px 6px rgba(0,0,0,.6); }
-    .tile .more { font-size:.95rem; font-weight:600; color: #a7f3d0; text-decoration: underline; text-underline-offset: 3px; }
+
+    .tile:hover .photo img {
+      transform: scale(1.06);
+    }
+
+    .tile .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, .2) 0%,
+        rgba(0, 0, 0, .55) 80%
+      );
+    }
+
+    .tile .inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      z-index: 2;
+    }
+
+    .tile h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, .6);
+    }
+
+    .tile .more {
+      font-size: .95rem;
+      font-weight: 600;
+      color: #a7f3d0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
     /* Floating button */
     .floating-btn {
@@ -206,26 +247,42 @@
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       color: #fff;
       text-decoration: none;
-      box-shadow: 0 6px 16px rgba(34,197,94,.45);
+      box-shadow: 0 6px 16px rgba(34, 197, 94, .45);
       animation: pulse 2s infinite;
       transition: transform .3s ease, box-shadow .3s ease;
     }
+
     .floating-btn:hover {
       transform: translateY(-2px) scale(1.05);
-      box-shadow: 0 10px 26px rgba(34,197,94,.6);
+      box-shadow: 0 10px 26px rgba(34, 197, 94, .6);
     }
+
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
-      70% { transform: scale(1.07); box-shadow: 0 0 0 18px rgba(34,197,94,0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      }
+      70% {
+        transform: scale(1.07);
+        box-shadow: 0 0 0 18px rgba(34, 197, 94, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
     }
 
     /* Footer */
-    footer { text-align:center; font-size:14px; color:#555; margin:40px 0 20px; }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin: 40px 0 20px;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
@@ -235,31 +292,21 @@
       <div class="contact-block">
         <!-- Telefon -->
         <a href="tel:+420799522522" class="phone">+420&nbsp;799&nbsp;522&nbsp;522</a>
-        <!-- Mail -->
-        <a href="mailto:info@bryumcisteni.cz" class="email" aria-label="Napsat e-mail" title="Napsat e-mail">
-  info@BryumCisteni.cz
-</a>
-
 
         <!-- Sociální sítě -->
         <div class="social-links">
-  <div class="social-item">
-  <a href="https://youtube.com/@bryumcisteni/shorts" target="_blank" rel="noopener noreferrer"
-     aria-label="Videa z realizací (YouTube)" title="Videa z realizací" class="youtube">
-      <svg viewBox="0 0 576 512"><path fill="currentColor" d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C458.8 64 288 64 288 64S117.2 64 74.9 75.5c-23.7 6.3-42.3 24.9-48.6 48.6C15.9 166.4 16 256 16 256s-.1 89.6 10.3 131.9c6.3 23.7 24.9 42.3 48.6 48.6C117.2 448 288 448 288 448s170.8 0 213.1-11.5c23.7-6.3 42.3-24.9 48.6-48.6C560.1 345.6 560 256 560 256s.1-89.6-10.3-131.9zM232 334V178l142 78-142 78z"/></svg>
-    </a>
-  <span class="social-label">Videa z realizací</span>
-  </div>
+          <a href="https://youtube.com/@bryumcisteni/shorts" target="_blank" aria-label="YouTube" class="youtube">
+            <svg viewBox="0 0 576 512">
+              <path fill="currentColor" d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C458.8 64 288 64 288 64S117.2 64 74.9 75.5c-23.7 6.3-42.3 24.9-48.6 48.6C15.9 166.4 16 256 16 256s-.1 89.6 10.3 131.9c6.3 23.7 24.9 42.3 48.6 48.6C117.2 448 288 448 288 448s170.8 0 213.1-11.5c23.7-6.3 42.3-24.9 48.6-48.6C560.1 345.6 560 256 560 256s.1-89.6-10.3-131.9zM232 334V178l142 78-142 78z"/>
+            </svg>
+          </a>
 
-  <div class="social-item">
-   <a href="https://facebook.com/BryumCisteni" target="_blank" rel="noopener noreferrer"
-     aria-label="Fotky „před a po“ + recenze (Facebook)" title="Fotky „před a po“ + recenze" class="facebook">
-      <svg viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.32 0 268.24 0c-73.22 0-121.26 44.38-121.26 124.72v70.62H86.41V288h60.57v224h92.66V288z"/></svg>
-    </a>
-    <span class="social-label">Fotky „před a po“ + recenze</span>
-  </div>
-</div>
-
+          <a href="https://facebook.com/BryumCisteni" target="_blank" aria-label="Facebook" class="facebook">
+            <svg viewBox="0 0 320 512">
+              <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.32 0 268.24 0c-73.22 0-121.26 44.38-121.26 124.72v70.62H86.41V288h60.57v224h92.66V288z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -267,47 +314,64 @@
   <!-- GRID SLUŽEB -->
   <section class="grid">
     <a class="tile" href="/cisteni-strech">
-      <div class="photo"><img src="images/cisteni_strechy_2.webp" alt="Čištění střechy" /></div>
+      <div class="photo">
+        <img src="images/cisteni_strechy_2.webp" alt="Čištění střechy" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Čištění střechy</h2>
         <span class="more">Zjistit více →</span>
       </div>
     </a>
+
     <a class="tile" href="/cisteni-dlazby">
-      <div class="photo"><img src="images/dlazba.webp" alt="Čištění dlažby" /></div>
+      <div class="photo">
+        <img src="images/dlazba.webp" alt="Čištění dlažby" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Čištění dlažby</h2>
         <span class="more">Zjistit více →</span>
       </div>
     </a>
+
     <a class="tile" href="/odstraneni-graffiti">
-      <div class="photo"><img src="images/graffiti.webp" alt="Odstranění graffiti" /></div>
+      <div class="photo">
+        <img src="images/graffiti.webp" alt="Odstranění graffiti" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Odstranění graffiti</h2>
         <span class="more">Zjistit více →</span>
       </div>
     </a>
+
     <a class="tile" href="/protiskluzova-ochrana">
-      <div class="photo"><img src="images/protiskluz.webp" alt="Protiskluzová ochrana" /></div>
+      <div class="photo">
+        <img src="images/protiskluz.webp" alt="Protiskluzová ochrana" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Protiskluzová ochrana</h2>
         <span class="more">Zjistit více →</span>
       </div>
     </a>
+
     <a class="tile" href="/keramicka-ochrana-podlah">
-      <div class="photo"><img src="images/betonova_podlaha.webp" alt="Keramická ochrana podlah" /></div>
+      <div class="photo">
+        <img src="images/betonova_podlaha.webp" alt="Keramická ochrana podlah" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Keramická ochrana podlah</h2>
         <span class="more">Zjistit více →</span>
       </div>
     </a>
+
     <a class="tile" href="/kontakty">
-      <div class="photo"><img src="images/kontakty.webp" alt="Kontakty" /></div>
+      <div class="photo">
+        <img src="images/kontakty.webp" alt="Kontakty" />
+      </div>
       <div class="overlay"></div>
       <div class="inner">
         <h2>Kontakty</h2>
