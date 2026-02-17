@@ -53,10 +53,15 @@
       align-items: center;
       gap: 14px;
     }
-    @media (min-width: 768px) {
-      .contact-block {
-        flex-direction: row;
-        justify-content: center;
+   @media (min-width: 768px) {
+  .contact-block {
+    flex-direction: column; /* na PC pod sebou */
+    justify-content: center;
+  }
+@media (max-width: 600px){
+  .email{ padding: 8px 14px; font-size: .95rem; }
+}
+
       }
     }
 
@@ -77,8 +82,30 @@
     }
     .phone:hover { transform: scale(1.05); filter: brightness(1.1); }
 
+    .email{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  transition: transform .3s ease, filter .3s ease, background .3s ease;
+  backdrop-filter: blur(6px);
+}
+.email:hover{
+  transform: scale(1.05);
+  filter: brightness(1.06);
+  background: rgba(255,255,255,.18);
+}
+
     /* Social links */
-    .social-item{
+   .social-item{
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -91,11 +118,9 @@
   color: rgba(255,255,255,.92);
   text-shadow: 0 2px 6px rgba(0,0,0,.55);
   text-align:center;
+  max-width: 160px; /* aby se FB popisek hezky lámal */
 }
-.social-label small{
-  font-weight:500;
-  opacity:.95;
-}
+
     .social-links {
       display: flex;
       gap: 14px;
@@ -203,23 +228,28 @@
       <div class="contact-block">
         <!-- Telefon -->
         <a href="tel:+420799522522" class="phone">+420&nbsp;799&nbsp;522&nbsp;522</a>
+        <!-- Mail -->
+        <a href="mailto:info@bryumcisteni.cz" class="email" aria-label="Napsat e-mail" title="Napsat e-mail">
+  info@BryumCisteni.cz
+</a>
+
 
         <!-- Sociální sítě -->
         <div class="social-links">
   <div class="social-item">
     <a href="https://youtube.com/@bryumcisteni/shorts" target="_blank" rel="noopener noreferrer"
-       aria-label="YouTube – videa z realizací" title="YouTube – videa z realizací" class="youtube">
+   aria-label="Videa z realizací (YouTube)" title="Videa z realizací" class="youtube">
       <svg viewBox="0 0 576 512"><path fill="currentColor" d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C458.8 64 288 64 288 64S117.2 64 74.9 75.5c-23.7 6.3-42.3 24.9-48.6 48.6C15.9 166.4 16 256 16 256s-.1 89.6 10.3 131.9c6.3 23.7 24.9 42.3 48.6 48.6C117.2 448 288 448 288 448s170.8 0 213.1-11.5c23.7-6.3 42.3-24.9 48.6-48.6C560.1 345.6 560 256 560 256s.1-89.6-10.3-131.9zM232 334V178l142 78-142 78z"/></svg>
     </a>
-    <span class="social-label">YouTube<br><small>Videa z realizací</small></span>
+   <span class="social-label">Videa z realizací</span>
   </div>
 
   <div class="social-item">
     <a href="https://facebook.com/BryumCisteni" target="_blank" rel="noopener noreferrer"
-       aria-label="Facebook – fotky před/po a recenze" title="Facebook – fotky před/po a recenze" class="facebook">
+   aria-label="Fotky „před a po“ + recenze (Facebook)" title="Fotky „před a po“ + recenze" class="facebook">
       <svg viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.32 0 268.24 0c-73.22 0-121.26 44.38-121.26 124.72v70.62H86.41V288h60.57v224h92.66V288z"/></svg>
     </a>
-    <span class="social-label">Facebook<br><small>Před/po + recenze</small></span>
+    <span class="social-label">Fotky „před a po“ + recenze</span>
   </div>
 </div>
 
