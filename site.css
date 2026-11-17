@@ -145,3 +145,35 @@
 
 /* Floating mobile call bar removed at the site owner's request. Normal phone links remain available. */
 @media (max-width: 760px) { .mobile-call { display: none !important; } }
+
+
+/* Mobile hero video: preserve its full 16:9 frame instead of cropping */
+@media (max-width: 760px) {
+  .hero-media {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  .hero-media video {
+    position: static;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .video-process-strip {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
