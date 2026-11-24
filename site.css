@@ -443,3 +443,70 @@
  .floor-art-label b{font-size:.62rem}
  .floor-art-label small{font-size:.62rem}
 }
+
+
+/* BRYUM vector pictograms: one consistent, accessible icon style across services. */
+.pictogram-svg{display:block;width:34px;height:34px;flex:none}
+.floor-pictogram{display:grid;place-items:center;width:58px;height:58px;border-radius:17px;background:#eff7d8;color:#638d19;border:1px solid #e2edc9;margin-bottom:15px}
+.floor-pictogram .pictogram-svg{width:34px;height:34px}
+.floor-benefit-grid article{min-height:216px;padding:22px 23px}
+.floor-benefit-kicker{display:block;color:#6a911e;font-size:.66rem;font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+.floor-benefit-grid h3{margin:8px 0 8px}
+.floor-application-grid article{position:relative;min-height:205px;padding:22px 21px}
+.floor-application-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:#183d2d;color:#d0ef4d;margin-bottom:14px;box-shadow:0 8px 18px rgba(24,61,45,.12)}
+.floor-application-icon .pictogram-svg{width:31px;height:31px}
+.floor-application-label{display:block;color:#6c941d;font-size:.63rem;font-weight:950;letter-spacing:.11em;margin-bottom:5px}
+.floor-application-grid h3{margin:0 0 7px;font-size:1.02rem}
+.floor-hero-usecases{display:flex;flex-wrap:wrap;gap:8px;margin:-4px 0 21px}
+.floor-hero-usecases span{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #dce6d4;border-radius:999px;background:rgba(255,255,255,.75);font-size:.75rem;font-weight:800;color:#31483a}
+.floor-hero-usecases svg{width:17px;height:17px;color:#638d19}
+.floor-hero-illustration{display:flex;flex-direction:column;justify-content:space-between;padding:26px;background:radial-gradient(circle at 80% 10%,rgba(207,239,77,.18),transparent 30%),linear-gradient(145deg,#193d2d,#284c3a 60%,#142e22);color:#fff}
+.floor-illustration-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.floor-illustration-brand{font-size:.8rem;font-weight:950;letter-spacing:.17em;color:#d0ef4d}
+.floor-illustration-caption{font-size:.65rem;font-weight:850;letter-spacing:.12em;color:#d5e3d8;text-align:right}
+.floor-liquid-row{display:flex;justify-content:center;align-items:flex-end;gap:clamp(16px,4vw,42px);padding:20px 0 4px}
+.floor-liquid{display:grid;justify-items:center;gap:7px;color:#e9f2e7}
+.floor-liquid .pictogram-svg{width:42px;height:42px;color:#d0ef4d;filter:drop-shadow(0 5px 8px rgba(0,0,0,.18))}
+.floor-liquid:nth-child(2) .pictogram-svg{color:#dbe8ed}
+.floor-liquid:nth-child(3) .pictogram-svg{color:#9fd9f5}
+.floor-liquid b{font-size:.67rem;letter-spacing:.14em}
+.floor-coating-demo{position:relative;min-height:142px;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(0,0,0,.08))}
+.floor-concrete-pattern{position:absolute;inset:0;background-color:#909d94;background-image:radial-gradient(rgba(28,49,37,.28) .8px,transparent .9px),linear-gradient(135deg,rgba(255,255,255,.18),transparent 55%);background-size:13px 13px,100% 100%}
+.floor-coating-line{position:absolute;left:0;right:0;top:17px;height:5px;background:#d0ef4d;box-shadow:0 0 18px rgba(208,239,77,.6)}
+.floor-coating-shine{position:absolute;z-index:1;left:12%;right:12%;top:4px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);filter:blur(14px)}
+.floor-concrete-label{position:absolute;left:0;right:0;bottom:0;padding:12px 15px;background:rgba(20,35,27,.67);color:#fff;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-align:center}
+.floor-illustration-bottom{display:grid;gap:4px;text-align:center;margin-top:18px}
+.floor-illustration-bottom strong{color:#d0ef4d;font-size:.78rem;letter-spacing:.1em}
+.floor-illustration-bottom small{color:#d4e1d6;font-size:.7rem}
+.home-floor-pictograms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;margin:-2px 0 19px;padding:12px 0 4px;border-top:1px solid rgba(255,255,255,.15)}
+.floor-primary .home-floor-pictograms{border-top-color:#dce5d8}
+.home-floor-pictograms span{display:grid;justify-items:center;gap:5px;font-size:.7rem;color:#d2dfd4}
+.floor-primary .home-floor-pictograms span{color:#526257}
+.home-floor-icon{width:24px;height:24px;color:var(--lime)}
+.floor-primary .home-floor-icon{color:#638d19}
+.roof-detail .roof-benefit-mark{width:50px;height:50px;border-radius:15px;margin-bottom:13px}
+.roof-pictogram{width:29px;height:29px}
+.roof-process-icon{position:absolute;right:22px;top:23px;width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#eff7d8;color:#638d19}
+.roof-process-pictogram{width:27px;height:27px}
+.roof-detail .step{padding-top:25px}
+.roof-detail .step-no{margin-bottom:2px}
+@media(max-width:760px){
+ .floor-hero-illustration{min-height:270px;padding:18px}
+ .floor-liquid-row{padding:12px 0 0;gap:27px}
+ .floor-liquid .pictogram-svg{width:34px;height:34px}
+ .floor-coating-demo{min-height:96px}
+ .floor-illustration-bottom{margin-top:12px}
+ .floor-hero-usecases{gap:6px;margin-bottom:16px}
+ .floor-hero-usecases span{font-size:.7rem;padding:6px 9px}
+ .floor-benefit-grid article,.floor-application-grid article{min-height:0}
+ .home-floor-pictograms{gap:5px}
+ .home-floor-pictograms span{font-size:.64rem}
+ .roof-process-icon{top:20px;right:18px}
+}
+@media(max-width:430px){
+ .floor-illustration-caption{font-size:.55rem}
+ .floor-illustration-brand{font-size:.7rem}
+ .floor-liquid-row{gap:20px}
+ .floor-liquid b{font-size:.6rem}
+ .home-floor-pictograms span{font-size:.6rem}
+}

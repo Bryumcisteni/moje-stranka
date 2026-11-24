@@ -44,3 +44,6 @@ Web obsahuje aktualizované titulky, meta popisy, canonical URL, Open Graph, str
 - Telefon: +420 799 522 522
 - E-mail: info@bryumcisteni.cz
 - Oblast působnosti: Zlínsko a Vysočina; po dohodě celá ČR.
+
+
+Aktualizace 24. 11. 2026: Stránka IG CeramFloor více cílí na garáže, autoservisy, dílny a průmyslové haly. Doplněny jsou vlastní vektorové piktogramy, schématická ilustrace ochranné vrstvy a samostatný náhledový obrázek pro sdílení. Text rozlišuje obecné oleofobní vlastnosti a nutnost ověřit konkrétní provozní emulze.
