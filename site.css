@@ -660,3 +660,15 @@
   .floor-24h-number{font-size:1.85rem}
   .floor-24h-copy strong{font-size:.76rem}
 }
+
+/* Improve contrast of the 24-hour quick-return callout on the light homepage card. */
+.home-services-first .floor-24h-eyebrow{
+  color:#3f5c16;
+  font-weight:950;
+}
+.home-services-first .floor-24h-copy strong{
+  color:#203b2b;
+}
+.home-services-first .floor-24h-copy small{
+  color:#465547;
+}
