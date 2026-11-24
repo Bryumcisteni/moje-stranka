@@ -695,3 +695,29 @@
   .floor-card-material-tags span{font-size:.69rem}
   .floor-materials-heading{margin-top:22px}
 }
+
+
+/* Home page: show the roof-cleaning process as three clear vertical steps. */
+.home-roof-process{width:100%;margin:5px 0 14px;padding:12px 0 4px;border-top:1px solid rgba(255,255,255,.17)}
+.home-roof-process-heading{margin:0 0 5px;color:#d0ef4d;font-size:.66rem;font-weight:950;letter-spacing:.13em;line-height:1.35}
+.home-roof-step{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:start;gap:11px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.home-roof-step:last-child{border-bottom:0;padding-bottom:6px}
+.home-roof-step-number{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#d0ef4d;color:#18392b;font-size:.72rem;font-weight:950;letter-spacing:-.02em}
+.home-roof-step strong{display:block;color:#fff;font-size:.91rem;line-height:1.25}
+.home-roof-step small{display:block;margin-top:3px;color:#d2dfd4;font-size:.78rem;line-height:1.45}
+.home-roof-facts{display:grid;gap:6px;margin:2px 0 12px;padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:rgba(255,255,255,.045)}
+.home-roof-facts span{display:flex;gap:8px;align-items:flex-start;color:#dce7dd;font-size:.76rem;line-height:1.4}
+.home-roof-facts span:before{content:"✓";flex:none;color:#d0ef4d;font-weight:950}
+
+/* Ensure the 24-hour label is readable on the pale callout on every page. */
+.floor-24h-highlight .floor-24h-copy .floor-24h-eyebrow{color:#294a1d!important;font-weight:950!important}
+.floor-24h-highlight .floor-24h-copy strong{color:#18392b!important}
+.floor-24h-highlight .floor-24h-copy small{color:#405347!important}
+@media(max-width:760px){
+  .home-roof-process{margin:3px 0 12px;padding-top:10px}
+  .home-roof-step{grid-template-columns:30px minmax(0,1fr);gap:9px;padding:9px 0}
+  .home-roof-step-number{width:29px;height:29px;font-size:.68rem}
+  .home-roof-step strong{font-size:.87rem}
+  .home-roof-step small{font-size:.75rem}
+  .home-roof-facts{padding:9px 10px}
+}
