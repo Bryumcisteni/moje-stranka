@@ -510,3 +510,26 @@
  .floor-liquid b{font-size:.6rem}
  .home-floor-pictograms span{font-size:.6rem}
 }
+
+
+/* Visual polish after the BRYUM floor-protection review. */
+.home-main-headline{color:var(--ink)}
+.home-main-headline em{color:inherit}
+.floor-benefit-grid article>span.floor-benefit-kicker{display:block;width:auto;height:auto;min-height:0;padding:0;margin:0 0 7px;border-radius:0;background:transparent;color:#6a911e;font-size:.66rem;font-weight:950;letter-spacing:.1em;line-height:1.4;text-transform:uppercase;white-space:normal;overflow:visible}
+.floor-benefit-grid article h3{margin:0 0 8px;line-height:1.25}
+.floor-hero-photo{position:relative;isolation:isolate;overflow:hidden;background:#283a30;min-height:410px;border-radius:28px;box-shadow:0 24px 60px rgba(24,57,43,.2)}
+.floor-hero-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.floor-photo-overlay{position:absolute;z-index:2;left:18px;right:18px;bottom:18px;display:grid;gap:3px;padding:14px 17px;border:1px solid rgba(255,255,255,.6);border-radius:15px;background:rgba(20,42,30,.86);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.16);backdrop-filter:blur(8px)}
+.floor-photo-overlay span{font-size:.62rem;font-weight:900;letter-spacing:.14em;color:#d0ef4d}
+.floor-photo-overlay strong{font-size:1rem;line-height:1.25;letter-spacing:.01em}
+.floor-photo-overlay small{font-size:.75rem;color:#e1eadf}
+.floor-service-visual{position:relative;display:block;overflow:hidden;background:#35443b}
+.floor-service-visual>img{width:100%;height:100%;object-fit:cover;object-position:center 68%}
+.floor-card-image-tag{position:absolute;left:12px;right:12px;bottom:11px;display:inline-block;width:fit-content;max-width:calc(100% - 24px);padding:7px 10px;border-radius:9px;background:rgba(20,42,30,.88);color:#fff;font-size:.61rem;font-weight:900;letter-spacing:.08em;line-height:1.3}
+@media(max-width:760px){
+ .home-main-headline{font-size:clamp(2.05rem,8.7vw,2.55rem)!important;line-height:1.03!important;letter-spacing:-.055em!important}
+ .floor-hero-photo{min-height:270px;height:270px;border-radius:20px}
+ .floor-photo-overlay{left:11px;right:11px;bottom:11px;padding:11px 13px}
+ .floor-photo-overlay strong{font-size:.88rem}
+ .floor-service-visual{height:190px}
+}
