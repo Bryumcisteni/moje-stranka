@@ -1,199 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalkulačka poptávky – BRYUM Čištění</title>
+  <meta name="description" content="Spočítejte si cenu za čištění střech, dlažby, odstranění graffiti, protiskluzovou ochranu nebo keramickou ochranu podlah. Odešlete poptávku online.">
 
-<html lang="cs"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#18392b" name="theme-color"/><title>Nezávazná poptávka | BRYUM Čištění Zlínsko a Vysočina</title><meta content="Poptávejte kompletní čištění střech za 147 Kč/m² nebo samostatné výškové práce na Zlínsku a Vysočině. Po dohodě přijedeme po celé ČR." name="description"/><link href="https://bryumcisteni.cz/poptavka.html" rel="canonical"/><meta content="noindex,follow" name="robots"/><meta content="website" property="og:type"/><meta content="cs_CZ" property="og:locale"/><meta content="BRYUM Čištění" property="og:site_name"/><meta content="Nezávazná poptávka | BRYUM Čištění" property="og:title"/><meta content="Poptávejte kompletní čištění střech za 147 Kč/m² nebo samostatné výškové práce na Zlínsku a Vysočině. Po dohodě přijedeme po celé ČR." property="og:description"/><meta content="https://bryumcisteni.cz/poptavka.html" property="og:url"/><meta content="https://bryumcisteni.cz/images/hero-poster.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Nezávazná poptávka | BRYUM Čištění" name="twitter:title"/><meta content="Poptávejte kompletní čištění střech za 147 Kč/m² nebo samostatné výškové práce na Zlínsku a Vysočině. Po dohodě přijedeme po celé ČR." name="twitter:description"/><meta content="https://bryumcisteni.cz/images/hero-poster.jpg" name="twitter:image"/><link href="images/logo.webp" rel="icon" type="image/webp"/><link href="site.css?v=20261117-ajax-form-fast-success" rel="stylesheet"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nezávazná poptávka – BRYUM Čištění","description":"Poptávka kompletního čištění střech a výškových prací."}</script><!-- Cloudflare Web Analytics -->
-<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cab6d58f23d84f9399da989f167c525a"}'></script>
-<!-- End Cloudflare Web Analytics -->
-</head><body><header class="site-header"><div class="container nav-wrap"><a aria-label="BRYUM Čištění – úvodní stránka" class="brand" href="index.html"><img alt="Originální logo BRYUM Čištění.cz" height="72" src="images/logo.webp" width="72"/><span class="brand-copy"><strong>BRYUM ČIŠTĚNÍ</strong><span>ČIŠTĚNÍ STŘECH · VÝŠKOVÉ PRÁCE</span></span></a><nav aria-label="Hlavní navigace" class="nav"><a href="index.html">Domů</a><a href="index.html#sluzby">Služby</a><a href="cisteni-strech.html">Čištění střech</a><a href="vyskove-prace.html">Výškové práce</a> <a href="index.html#faq">Časté otázky</a><a href="index.html#recenze">Recenze</a><a href="kontakty.html">Kontakt</a></nav><a class="nav-cta" href="tel:+420799522522"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.7L7.1 10.3a16 16 0 0 0 6.6 6.6l1.9-1.9a2 2 0 0 1 1.7-.6l3 .5a2 2 0 0 1 1.7 2Z"></path></svg> +420 799 522 522</a><button aria-expanded="false" aria-label="Otevřít navigaci" class="menu-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button></div></header><main><section class="page-hero"><div class="container"><span class="eyebrow">Rychle a nezávazně</span><h1>Poptat čištění střechy nebo další práce</h1><p>Vyplňte několik údajů k čištění střechy nebo výškovým pracím. Podle zadaných informací připravíme orientační nabídku a domluvíme další postup. <strong>Při objednání kompletního čištění střechy máte čištění okapů zdarma.</strong></p></div></section>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-<section class="section inquiry-form-section" id="formular">
-<div class="container" style="max-width:900px">
-<div class="section-head">
-<span class="eyebrow">Nezávazná poptávka</span>
-<h2>Vyberte služby a spočítejte si orientační cenu</h2>
-<p>Zaškrtněte, co potřebujete. Kalkulačka průběžně vypočítá orientační cenu kompletního čištění střechy podle zadané plochy.</p>
-</div>
-<div class="form-card calculator-card">
-<form action="https://formsubmit.co/bcebcf4b0dc5c3537ca84d1dc5bcd7b4" id="bryum-quote-form" method="POST">
-<fieldset class="service-picker">
-<legend>O jaké služby máte zájem?</legend>
-<label class="service-option" for="service-roof">
-<input id="service-roof" name="Požadované služby" type="checkbox" value="Kompletní čištění střechy – biocid 29 Kč/m² + čištění vapkou 64 Kč/m² + impregnace 54 Kč/m² = 147 Kč/m²; okapy zdarma"/>
-<span class="service-option-copy"><strong>Kompletní čištění střechy</strong><small>Biocidní ošetření 29 Kč/m² + čištění vapkou 64 Kč/m² + impregnace 54 Kč/m². Okapy při kompletním čištění zdarma.</small></span>
-<span class="service-option-price">147 Kč/m²</span>
-</label>
-<label class="service-option" for="service-height">
-<input id="service-height" name="Požadované služby" type="checkbox" value="Výškové práce – individuální nabídka"/>
-<span class="service-option-copy"><strong>Výškové práce</strong><small>Rozsah a cena se stanoví individuálně podle místa a náročnosti práce.</small></span>
-<span class="service-option-price">Individuálně</span>
-</label>
-</fieldset>
-<div class="calculator-inputs">
-<div class="form-field" hidden="" id="roof-area-wrap">
-<label for="roof-area">Přibližná plocha střechy (m²)</label>
-<input id="roof-area" inputmode="numeric" min="1" name="Plocha střechy (m²)" placeholder="Např. 150" step="1" type="number"/>
-<small>Stačí váš odhad. Přesnou plochu ověříme při bezplatné prohlídce.</small>
-</div>
-<div class="form-field" hidden="" id="roof-type-wrap">
-<label for="roof-type">Typ střešní krytiny</label>
-<select id="roof-type" name="Typ střešní krytiny">
-<option value="Nevím / jiné">Nevím / jiné</option>
-<option>Betonové střešní tašky</option>
-<option>Pálené střešní tašky</option>
-<option>Asfaltový šindel</option>
-<option>Jiné</option>
-</select>
-</div>
-</div>
-<div aria-atomic="true" aria-live="polite" class="calculator-summary">
-<div class="calculator-summary-label">Orientační kalkulace</div>
-<div class="calculator-total" id="calculator-total">Vyberte službu a zadejte množství</div>
-<p class="calculator-breakdown" id="calculator-breakdown">Výpočet je nezávazný. Konečnou cenu upřesníme po bezplatné prohlídce a zaměření střechy dronem.</p>
-<div class="calculator-vat-note">Nejsme plátci DPH.</div></div>
-<input id="quote-total-hidden" name="Orientační kalkulace" type="hidden" value="Zatím nevyplněno"/>
-<input id="quote-breakdown-hidden" name="Podrobnosti kalkulace" type="hidden" value=""/>
-<div class="form-section-title"><span class="eyebrow">Kontaktní údaje</span><h3>Kam vám máme poslat nabídku?</h3></div>
-<div class="form-grid">
-<div class="form-field">
-<label for="name">Jméno a příjmení *</label>
-<input autocomplete="name" id="name" name="Jméno a příjmení" required=""/>
-</div>
-<div class="form-field">
-<label for="phone">Telefon *</label>
-<input autocomplete="tel" id="phone" name="Telefon" placeholder="+420 ..." required="" type="tel"/>
-</div>
-<div class="form-field full">
-<label for="email">E-mail *</label>
-<input autocomplete="email" id="email" name="E-mail" placeholder="vas@email.cz" required="" type="email"/>
-</div>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://bryumcisteni.cz/poptavka" />
 
-
-<div class="form-field full">
-<label for="message">Doplňující informace</label>
-<textarea id="message" name="Doplňující informace" placeholder="Můžete doplnit i další informace."></textarea>
-</div>
-</div>
-
-<p class="privacy-note">Odesláním formuláře berete na vědomí, že vaše údaje zpracujeme za účelem vyřízení poptávky a přípravy cenové nabídky.</p><input name="_subject" type="hidden" value="Nová poptávka z webu BRYUM Čištění"/>
-<input name="_template" type="hidden" value="table"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="https://bryumcisteni.cz/dekujeme.html"/>
-<p class="form-note">Uvedený výpočet je orientační a není závaznou cenovou nabídkou. Přesný rozsah a cenu potvrdíme po prohlídce.</p>
-<button class="btn btn-primary form-submit" type="submit">Odeslat nezávaznou poptávku <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</form>
-</div>
-</div>
-</section>
-<section class="section inquiry-followup">
-<div class="container">
-<div class="section-head">
-<span class="eyebrow">Co bude následovat</span>
-<h2>Po odeslání poptávky vás čekají tři jednoduché kroky</h2>
-</div>
-<div class="inquiry-grid">
-<article class="inquiry-card"><div class="inquiry-number">01</div><h3>Orientační nabídka</h3><p>Na základě údajů z formuláře vám pošleme orientační cenovou nabídku.</p></article>
-<article class="inquiry-card"><div class="inquiry-number">02</div><h3>Bezplatná prohlídka střechy</h3><p>U čištění střechy přijedeme, střechu zdarma prohlédneme a zaměříme dronem. Potvrdíme rozsah a domluvíme termín.</p></article>
-<article class="inquiry-card"><div class="inquiry-number">03</div><h3>Realizace</h3><p>Práce provedeme v dohodnutém termínu a s důrazem na bezpečný postup.</p></article>
-</div>
-</div>
-</section>
-<script>
-(() => {
-  const form = document.getElementById('bryum-quote-form');
-  if (!form) return;
-
-  const roofCheck = document.getElementById('service-roof');
-  const heightCheck = document.getElementById('service-height');
-  const roofAreaWrap = document.getElementById('roof-area-wrap');
-  const roofTypeWrap = document.getElementById('roof-type-wrap');
-  const roofArea = document.getElementById('roof-area');
-  const totalEl = document.getElementById('calculator-total');
-  const breakdownEl = document.getElementById('calculator-breakdown');
-  const hiddenTotal = document.getElementById('quote-total-hidden');
-  const hiddenBreakdown = document.getElementById('quote-breakdown-hidden');
-
-  const money = value => new Intl.NumberFormat('cs-CZ', { maximumFractionDigits: 0 }).format(value) + ' Kč';
-  const qty = input => Math.max(0, Number.parseFloat(input.value) || 0);
-
-  function updateCalculator() {
-    const hasRoof = roofCheck.checked;
-    const hasHeight = heightCheck.checked;
-    roofAreaWrap.hidden = !hasRoof;
-    roofTypeWrap.hidden = !hasRoof;
-
-    let total = 0;
-    const parts = [];
-    let needsRoofArea = false;
-
-    if (hasRoof) {
-      const area = qty(roofArea);
-      if (area > 0) {
-        const biocide = area * 29;
-        const cleaning = area * 64;
-        const impregnation = area * 54;
-        const value = biocide + cleaning + impregnation;
-        total += value;
-        parts.push(`Biocidní ošetření: ${area} m² × 29 Kč = ${money(biocide)}`);
-        parts.push(`Čištění vapkou: ${area} m² × 64 Kč = ${money(cleaning)}`);
-        parts.push(`Impregnace: ${area} m² × 54 Kč = ${money(impregnation)}`);
-        parts.push(`Kompletní čištění střechy celkem: ${money(value)}`);
-      } else {
-        needsRoofArea = true;
-        parts.push('Doplňte přibližnou plochu střechy pro výpočet.');
-      }
-      parts.push('Čištění okapů při kompletním čištění střechy: ZDARMA');
+  <style>
+    :root {
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+      --dark: #0f172a;
+      --highlight: #dc2626;
     }
 
-    if (hasHeight) parts.push('Výškové práce: cena bude stanovena individuálně podle rozsahu.');
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; overflow-x: hidden; }
 
-    if (!hasRoof && !hasHeight) {
-      totalEl.textContent = 'Vyberte službu a zadejte množství';
-      breakdownEl.textContent = 'Vyberte kompletní čištění střechy nebo výškové práce. Okapy jsou při kompletním čištění střechy zdarma.';
-      hiddenTotal.value = 'Zatím nevyplněno';
-      hiddenBreakdown.value = '';
-      return;
+    /* HERO */
+    .hero { position: relative; display: flex; align-items: center; justify-content: center; text-align: center;
+      height: 30vh; min-height: 200px; background: url('images/pozadi.webp') center/cover no-repeat; color: white; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 40px 20px 20px; }
+    .hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 20px; text-shadow: 0 3px 8px rgba(0,0,0,.5); }
+    .logo { max-width: 100px; margin: 0 auto 7px; display: block; }
+
+    .content { max-width:800px; margin:40px auto; padding:0 16px; }
+    .content h2 { font-size:1.6rem; margin:20px 0 15px; color:var(--dark); }
+    .box { background:#f9f9f9; padding:20px; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,0.1); margin-bottom:24px; }
+
+    label { display:block; margin-bottom:10px; font-weight:600; }
+    input[type="number"], input[type="email"], input[type="tel"], textarea {
+      width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:15px; font-size:1rem;
     }
+    textarea { min-height:100px; resize:vertical; }
 
-    if (total > 0) {
-      totalEl.textContent = 'Orientační cena: ' + money(total);
-      if (hasHeight) parts.push('Kalkulace nezahrnuje individuálně naceněné výškové práce.');
-    } else if (hasHeight && !needsRoofArea) {
-      totalEl.textContent = 'Cena bude stanovena individuálně';
-    } else {
-      totalEl.textContent = 'Doplňte plochu střechy pro výpočet';
+    .checkbox { margin-bottom:10px; }
+    .checkbox label { font-weight:400; }
+
+    .total { font-size:1.3rem; font-weight:700; color:var(--brand); margin:20px 0; text-align:center; }
+
+    .btn { display:inline-block; padding:12px 22px; border-radius:999px; font-size:1.1rem; font-weight:700;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; text-decoration:none; border:none; cursor:pointer;
+      box-shadow:0 6px 16px rgba(34,197,94,.45); transition:transform .3s ease, box-shadow .3s ease; }
+    .btn:hover { transform:translateY(-2px) scale(1.05); box-shadow:0 10px 26px rgba(34,197,94,.6); }
+
+    .back-btn {
+      display:inline-block; padding:12px 22px; border-radius:999px; font-size:1rem; font-weight:600;
+      background:#fff; color:var(--brand); border:2px solid var(--brand); text-decoration:none;
+      box-shadow:0 4px 12px rgba(0,0,0,.1); transition:transform .3s, box-shadow .3s, background .3s, color .3s;
     }
+    .phone {
+  display: inline-block; 
+  padding: 12px 22px; 
+  border-radius: 999px; 
+  font-size: 1.3rem; 
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)); 
+  color: #fff; 
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(34,197,94,.45); 
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.phone:hover {
+  transform: translateY(-2px) scale(1.05); 
+  box-shadow: 0 10px 26px rgba(34,197,94,.6);
+}
+    .dph-info {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+    /* Telefon + mail v HERO */
+.hero-contacts{
+  display:flex;
+  flex-direction: column;   /* mobil: pod sebou */
+  align-items:center;
+  gap: 12px;
+}
 
-    breakdownEl.textContent = parts.join(' • ') + ' Výpočet je orientační, konečnou cenu potvrdíme po prohlídce.';
-    hiddenTotal.value = total > 0 ? money(total) + (hasHeight ? ' + výškové práce individuálně' : '') : 'Cena vyžaduje upřesnění';
-    hiddenBreakdown.value = parts.join('\n');
+@media (min-width: 768px){
+  .hero-contacts{
+    flex-direction: row;    /* PC: vedle sebe */
+    flex-wrap: wrap;        /* když se nevejdou, zalomí se */
+    justify-content:center;
   }
+}
 
-  form.addEventListener('change', updateCalculator);
-  form.addEventListener('input', updateCalculator);
+/* Mail tlačítko – stejný vzhled jako telefon */
+.email-link{
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(34,197,94,.45);
+  transition: transform .3s ease, box-shadow .3s ease;
+  white-space: nowrap;
+}
 
-  // Validní formulář odesílá prohlížeč přímo metodou POST na FormSubmit,
-  // stejně jako v původním webu. JavaScript pouze hlídá výběr služby.
-  form.addEventListener('submit', event => {
-    if (!roofCheck.checked && !heightCheck.checked) {
-      event.preventDefault();
-      alert('Vyberte prosím alespoň jednu službu, o kterou máte zájem.');
-      roofCheck.focus();
-    }
-  });
-  updateCalculator();
-})();
-</script>
-</main><footer class="site-footer"><div class="container"><div class="footer-grid"><div><div class="footer-brand"><img alt="Originální logo BRYUM Čištění.cz" height="74" src="images/logo.webp" width="74"/><div><strong>BRYUM ČIŠTĚNÍ</strong><span>Čistá střecha. Bezpečně.</span></div></div><p style="max-width:390px;margin-top:16px">Naší hlavní oblastí působnosti je Zlínsko a Vysočina. Po předchozí dohodě přijedeme také do dalších míst po celé České republice.</p></div><div><h3>Služby</h3><div class="footer-links"><a href="cisteni-strech.html">Čištění střech</a><a href="vyskove-prace.html">Výškové práce</a><a href="index.html#impaguard">Certifikát Impaguard</a></div></div><div><h3>Kontakt</h3><div class="footer-links"><a href="tel:+420799522522">+420 799 522 522</a><a href="mailto:info@bryumcisteni.cz">info@bryumcisteni.cz</a><a href="kontakty.html">Kontakty a sídla</a><a href="poptavka.html">Nezávazná poptávka</a></div></div></div><div class="footer-social" aria-label="Sociální sítě BRYUM">
-  <a class="footer-social-link" href="https://facebook.com/BryumCisteni" target="_blank" rel="noopener noreferrer" aria-label="Facebook BRYUM Čištění">
-    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5H17V3.9c-.4-.1-1.3-.2-2.4-.2-2.4 0-4.1 1.5-4.1 4.2V10H7.8v3h2.7v8h3Z" fill="currentColor"/></svg>
-    <span>Facebook</span>
-  </a>
-  <a class="footer-social-link" href="https://www.instagram.com/bryum_cisteni/" target="_blank" rel="noopener noreferrer" aria-label="Instagram BRYUM Čištění">
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".8" fill="currentColor" stroke="none"/></svg>
-    <span>Instagram</span>
-  </a>
-  <a class="footer-social-link" href="https://youtube.com/@bryumcisteni/shorts" target="_blank" rel="noopener noreferrer" aria-label="YouTube BRYUM Čištění">
-    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M23.2 7.1a3 3 0 0 0-2.1-2.1C19.2 4.5 12 4.5 12 4.5s-7.2 0-9.1.5A3 3 0 0 0 .8 7.1 31 31 0 0 0 .3 12a31 31 0 0 0 .5 4.9 3 3 0 0 0 2.1 2.1c1.9.5 9.1.5 9.1.5s7.2 0 9.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9Z" fill="currentColor"/><path d="m9.7 15.5 6.1-3.5-6.1-3.5v7Z" fill="#18392b"/></svg>
-    <span>YouTube</span>
+.email-link:hover{
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 26px rgba(34,197,94,.6);
+}
+/* PC: telefon i mail stejně široké */
+@media (min-width: 768px){
+  .phone,
+  .email-link{
+    min-width: 320px;
+    text-align: center;
+  }
+}
+/* mobilní zmenšení, aby se mail vešel */
+@media (max-width: 600px){
+  .email-link{ font-size: 1rem; padding: 10px 16px; }
+}
+
+    .back-btn:hover { background:var(--brand); color:#fff; transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.25); }
+
+    .gdpr { font-size:0.85rem; color:#555; text-align:center; margin:15px 0; }
+
+    footer { text-align:center; font-size:14px; color:#555; margin:40px 0 20px; }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+ <section class="hero">
+  <div class="hero-content">
+    <a href="https://bryumcisteni.cz/">
+      <img src="images/logo.webp" alt="BRYUM Čištění" class="logo">
+    </a>
+    <h1>Spočítejte si cenu</h1>
+    <div class="hero-contacts">
+  <a href="tel:+420799522522" class="phone">+420&nbsp;799&nbsp;522&nbsp;522</a>
+
+  <a href="mailto:info@bryumcisteni.cz" class="email-link">
+    info@BryumCisteni.cz
   </a>
 </div>
-<div class="footer-bottom"><span>© 2026 BRYUM Čištění. Všechna práva vyhrazena.</span><span>Nejsme plátci DPH.</span></div></div></footer><script defer="" src="site.js"></script></body></html>
+
+</section>
+
+  <!-- OBSAH -->
+  <section class="content">
+    <form action="https://formsubmit.co/bcebcf4b0dc5c3537ca84d1dc5bcd7b4" method="POST" class="box" id="calc-form">
+
+
+      <h2>Zaškrtněte služby, o které máte zájem:</h2>
+     
+      <h2>Čištění střechy</h2>
+      <input type="number" id="plocha_strecha" name="plocha_strecha" placeholder="Zadejte odhadem plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Čištění střechy" data-price="64" data-group="strecha"> Čištění střechy (64 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Aplikace biocidu" data-price="29" data-group="strecha"> Aplikace biocidu (29 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Nano impregnace" data-price="54" data-group="strecha"> Nano keramická impregnace (54 Kč/m²)</label>
+      </div>
+
+      <h2>Čištění dlažby</h2>
+      <input type="number" id="plocha_dlazba" name="plocha_dlazba" placeholder="Zadejte odhadem plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Čištění dlažby" data-price="59" data-group="dlazba"> Čištění dlažby + biocid (59 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Impregnace dlažby" data-price="54" data-group="dlazba"> Impregnace dlažby (54 Kč/m²)</label>
+      </div>
+
+      <h2>Odstranění graffiti</h2>
+      <input type="number" id="plocha_graffiti" name="plocha_graffiti" placeholder="Zadejte odhadem plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Odstranění graffiti" data-price="690" data-group="graffiti"> Odstranění graffiti (690 Kč/m²)</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="Anti-graffiti ochrana" data-price="290" data-group="graffiti"> Anti-graffiti ochrana (290 Kč/m²)</label>
+      </div>
+
+      <h2>Protiskluzová ochrana</h2>
+      <input type="number" id="plocha_protiskluz" name="plocha_protiskluz" placeholder="Zadejte odhadem plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Protiskluzová ochrana" data-price="390" data-group="protiskluz"> Protiskluzová ochrana (390 Kč/m²)</label>
+      </div>
+
+      <h2>Keramická ochrana podlahy</h2>
+      <input type="number" id="plocha_laminace" name="plocha_laminace" placeholder="Zadejte odhadem plochu v m²" min="0">
+      <div class="checkbox">
+        <label><input type="checkbox" name="Laminace podlahy" data-price="509" data-group="laminace"> Keramická ochrana podlahy (509 Kč/m²)</label>
+      </div>
+
+      <div class="total" id="total">Orientační celková cena: 0 Kč</div>
+      <input type="hidden" name="Orientační celková cena" id="hiddenTotal">
+      <p class="dph-info">
+  <strong>Nejsme plátci DPH</strong> - cena se nezvýší o DPH. 
+     </p>
+      <h2>Vaše údaje</h2>
+      <input type="email" name="Email" placeholder="Váš e-mail" required>
+      <input type="tel" name="Telefon" placeholder="Telefon (nepovinné)">
+      <textarea name="Doplňující informace" placeholder="Doplňující informace k poptávce" required></textarea>
+
+      <!-- skryté parametry pro FormSubmit -->
+     <input type="hidden" name="_subject" value="Nová poptávka z webu Bryum Čištění">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://bryumcisteni.cz/dekujeme.html">
+
+      <p class="gdpr">Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem vytvoření poptávky.</p>
+
+      <button type="submit" class="btn">Odeslat poptávku</button>
+    </form>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="/index.html#sluzby" class="back-btn">← Zpět na hlavní stránku</a>
+    </div>
+  </section>
+
+  <footer>© 2025 Bryum Čištění. Všechna práva vyhrazena.</footer>
+
+  <script>
+    const form = document.getElementById('calc-form');
+    const totalEl = document.getElementById('total');
+    const hiddenTotal = document.getElementById('hiddenTotal');
+
+    function calculateTotal() {
+      let total = 0;
+      const checkboxes = form.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          const price = parseFloat(cb.dataset.price);
+          const group = cb.dataset.group;
+          const input = document.getElementById('plocha_' + group);
+          const qty = parseFloat(input.value) || 0;
+          total += price * qty;
+        }
+      });
+      const text = 'Orientační celková cena: ' + total.toLocaleString('cs-CZ') + ' Kč';
+      totalEl.textContent = text;
+      hiddenTotal.value = total.toLocaleString('cs-CZ') + ' Kč';
+    }
+
+    form.addEventListener('input', calculateTotal);
+  </script>
+</body>
+</html>
