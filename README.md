@@ -47,3 +47,12 @@ Web obsahuje aktualizované titulky, meta popisy, canonical URL, Open Graph, str
 
 
 Aktualizace 24. 11. 2026: Stránka IG CeramFloor více cílí na garáže, autoservisy, dílny a průmyslové haly. Doplněny jsou vlastní vektorové piktogramy, schématická ilustrace ochranné vrstvy a samostatný náhledový obrázek pro sdílení. Text rozlišuje obecné oleofobní vlastnosti a nutnost ověřit konkrétní provozní emulze.
+
+
+## Hlavní stránka – dvojice služeb
+
+- Úvodní část nyní představuje čištění střech a ochranu podlah přímo ve dvou hlavních kartách.
+- Na počítači jsou karty vedle sebe; na mobilu jsou pod sebou a nad nimi je rychlá volba obou služeb.
+- Karta střech používá skutečné video `media/hero-drone.mp4`; karta podlah používá ilustrační vizualizaci.
+- Pochoznost podlahy přibližně po 24 hodinách je zvýrazněna přímo v kartě podlah.
+- Zachovány jsou ceny, formulář, SEO, analytika, původní logo, `CNAME` a ostatní stránky.

@@ -547,3 +547,116 @@
 .floor-24h-number span{font-size:.65em;margin-left:2px}
 .booking-footnote{display:block;margin-top:3px;color:#d0ddcf;font-size:.68rem;line-height:1.35}
 @media(max-width:760px){.floor-24h-highlight{gap:10px;padding:13px;border-radius:15px}.floor-24h-icon{width:46px;height:46px;border-radius:13px}.floor-24h-number{width:48px;height:48px;border-radius:13px;font-size:1.25rem}.floor-24h-copy strong{font-size:1rem}.floor-24h-copy small{font-size:.66rem}.floor-24h-eyebrow{font-size:.57rem}.booking-footnote{font-size:.66rem}}
+
+
+/* Homepage lead: two equally important specialist service cards */
+.home-services-first{
+  padding:42px 0 54px;
+  background:radial-gradient(circle at 78% 3%,#eff9ce 0,transparent 25%),linear-gradient(180deg,#fff 0%,#f6f7f1 100%);
+}
+.home-services-heading{max-width:880px;margin:0 auto 30px;text-align:center}
+.home-services-title{
+  font-size:clamp(2.1rem,4.4vw,3.45rem);
+  line-height:1.04;
+  letter-spacing:-.055em;
+  margin:9px 0 12px;
+  color:var(--ink);
+}
+.home-services-heading p{max-width:780px;margin:0 auto;color:var(--muted);font-size:1.04rem}
+.home-services-first .dual-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.home-services-first .service-card{min-width:0;height:100%;scroll-margin-top:108px}
+.home-services-first .service-image{
+  height:auto;
+  aspect-ratio:16 / 9;
+  position:relative;
+  overflow:hidden;
+  background:#e7ebe3;
+}
+.home-services-first .service-image img,
+.home-services-first .service-image video{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.home-services-first .service-video-image video{background:#172d22}
+.home-services-first .service-body{padding:25px 26px 24px}
+.home-services-first .service-body h3{font-size:clamp(1.35rem,2vw,1.62rem)}
+.home-services-first .service-body p{font-size:.94rem;line-height:1.65}
+.home-services-first .service-body ul{font-size:.9rem;line-height:1.5;gap:9px}
+.home-services-first .service-price{margin-top:auto;padding-top:16px}
+.home-services-first .service-price strong{font-size:clamp(1.8rem,2.6vw,2.1rem)}
+.home-services-first .service-link{display:inline-flex;align-items:center;min-height:42px;margin-top:12px}
+.service-jump-links{display:none}
+.floor-24h-highlight{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  width:100%;
+  margin:0 0 15px;
+  padding:13px 15px;
+  border:1px solid #d6e7a0;
+  border-radius:15px;
+  background:#f2f8df;
+  color:#18392b;
+}
+.floor-24h-number{
+  display:flex;
+  align-items:baseline;
+  gap:2px;
+  flex:none;
+  font-size:2.1rem;
+  line-height:1;
+  font-weight:950;
+  letter-spacing:-.07em;
+  color:#628b18;
+}
+.floor-24h-number span{font-size:1.1rem;letter-spacing:0}
+.floor-24h-copy{display:grid;gap:3px;min-width:0}
+.floor-24h-copy strong{font-size:.82rem;line-height:1.3;letter-spacing:.035em;color:#315021}
+.floor-24h-copy small{font-size:.72rem;line-height:1.4;color:#63705b}
+.home-services-first .proof-row{margin-top:24px}
+.home-services-first .height-service-band{margin-top:24px}
+@media(max-width:760px){
+  .home-services-first{padding:24px 0 38px}
+  .home-services-heading{margin-bottom:17px;text-align:left}
+  .home-services-title{font-size:clamp(2rem,8.2vw,2.65rem);line-height:1.02;margin:7px 0 10px}
+  .home-services-heading p{font-size:.94rem;line-height:1.5;margin:0}
+  .service-jump-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:18px 0 20px}
+  .service-jump-link{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-width:0;
+    min-height:76px;
+    padding:11px 12px;
+    border:1px solid #dce5d2;
+    border-radius:14px;
+    background:#fff;
+    color:var(--ink);
+    text-decoration:none;
+    box-shadow:0 5px 16px rgba(20,35,27,.045);
+  }
+  .service-jump-label{font-size:.61rem;font-weight:950;letter-spacing:.075em;color:#628b18;line-height:1.25}
+  .service-jump-link strong{font-size:clamp(.78rem,3.15vw,.94rem);line-height:1.3;margin-top:5px;letter-spacing:-.02em}
+  .home-services-first .dual-service-grid{grid-template-columns:1fr;gap:17px}
+  .home-services-first .service-card{scroll-margin-top:88px;border-radius:19px}
+  .home-services-first .service-image{aspect-ratio:16 / 9}
+  .home-services-first .service-body{padding:20px 19px 21px}
+  .home-services-first .service-body h3{font-size:1.42rem}
+  .home-services-first .service-body p{font-size:.91rem;margin-bottom:14px}
+  .home-services-first .service-body ul{font-size:.86rem;margin-bottom:16px}
+  .home-services-first .service-price{padding-top:14px}
+  .home-services-first .proof-row{margin-top:20px}
+  .home-services-first .height-service-band{margin-top:18px}
+}
+@media(max-width:380px){
+  .service-jump-links{gap:7px}
+  .service-jump-link{padding:10px 9px;min-height:72px}
+  .service-jump-label{font-size:.57rem}
+  .service-jump-link strong{font-size:.76rem}
+  .floor-24h-highlight{padding:11px 12px;gap:10px}
+  .floor-24h-number{font-size:1.85rem}
+  .floor-24h-copy strong{font-size:.76rem}
+}
