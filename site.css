@@ -206,3 +206,92 @@
 .height-service-option{margin-top:8px;padding-top:16px;border-top:1px solid var(--line)}
 .calculator-vat-detail{margin:5px 0 0;color:#e5eee6;font-size:.8rem;line-height:1.45}
 @media(max-width:600px){.roof-service-row{align-items:flex-start}.roof-service-row input{margin-top:2px}.roof-gutter-note{margin-left:25px}}
+
+
+/* Mobile homepage refinement: compact first screen and bring the full hero video forward.
+   Desktop layout is intentionally unchanged. */
+@media (max-width: 760px) {
+  .hero {
+    padding: 19px 0 23px;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  /* Flatten the copy wrapper so the media can sit between the text and the CTAs. */
+  .hero-copy {
+    display: contents;
+  }
+  .hero-copy > .eyebrow {
+    order: 1;
+    margin-bottom: 7px;
+  }
+  .hero-copy h1 {
+    order: 2;
+    font-size: clamp(2.3rem, 10.4vw, 3rem);
+    line-height: .98;
+    margin: 7px 0 11px;
+    max-width: 570px;
+  }
+  .hero-copy > p {
+    order: 3;
+    max-width: 100%;
+    font-size: .98rem;
+    line-height: 1.45;
+    margin: 0 0 13px;
+  }
+  .hero-media {
+    order: 4;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: auto;
+    margin: 0 0 13px;
+    border-radius: 17px;
+  }
+  .hero-media video {
+    position: static;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .video-process-strip {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .hero-actions {
+    order: 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin: 0;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  .hero-note {
+    order: 6;
+    margin-top: 16px;
+  }
+  .hero-location {
+    order: 7;
+    margin-top: 8px;
+  }
+  .booking-strip {
+    margin-top: 22px;
+  }
+}
