@@ -533,3 +533,17 @@
  .floor-photo-overlay strong{font-size:.88rem}
  .floor-service-visual{height:190px}
 }
+
+
+/* Main benefit callout: quick return to pedestrian use after IG CeramFloor. */
+.floor-24h-highlight{display:flex;align-items:center;gap:14px;max-width:650px;margin:0 0 20px;padding:15px 17px;border:1px solid rgba(208,239,77,.4);border-radius:18px;background:linear-gradient(110deg,#183d2d 0%,#244d39 100%);color:#fff;box-shadow:0 12px 26px rgba(24,61,45,.15)}
+.floor-24h-icon{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:16px;background:#d0ef4d;color:#18392b}
+.floor-24h-icon .pictogram-svg{width:32px;height:32px}
+.floor-24h-copy{display:grid;gap:3px;min-width:0;flex:1}
+.floor-24h-eyebrow{font-size:.64rem;font-weight:950;letter-spacing:.14em;color:#d0ef4d}
+.floor-24h-copy strong{font-size:clamp(1.04rem,1.8vw,1.36rem);line-height:1.15;letter-spacing:-.025em;color:#fff}
+.floor-24h-copy small{font-size:.72rem;line-height:1.4;color:#d8e5d9}
+.floor-24h-number{display:grid;place-items:center;flex:none;width:60px;height:60px;border-radius:16px;background:#d0ef4d;color:#18392b;font-size:1.55rem;font-weight:1000;letter-spacing:-.06em}
+.floor-24h-number span{font-size:.65em;margin-left:2px}
+.booking-footnote{display:block;margin-top:3px;color:#d0ddcf;font-size:.68rem;line-height:1.35}
+@media(max-width:760px){.floor-24h-highlight{gap:10px;padding:13px;border-radius:15px}.floor-24h-icon{width:46px;height:46px;border-radius:13px}.floor-24h-number{width:48px;height:48px;border-radius:13px;font-size:1.25rem}.floor-24h-copy strong{font-size:1rem}.floor-24h-copy small{font-size:.66rem}.floor-24h-eyebrow{font-size:.57rem}.booking-footnote{font-size:.66rem}}
