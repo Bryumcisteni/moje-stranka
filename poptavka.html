@@ -10,18 +10,13 @@
 <div class="section-head">
 <span class="eyebrow">Nezávazná poptávka</span>
 <h2>Vyberte služby a spočítejte si orientační cenu</h2>
-<p>Zaškrtněte, co potřebujete. Kalkulačka průběžně vypočítá orientační cenu podle vybraných služeb a zadané plochy střechy.</p>
+<p>Zaškrtněte, co potřebujete. Kalkulačka průběžně vypočítá orientační cenu podle vybraných služeb. Plochu střechy vyplňte při výběru služeb čištění střechy.</p>
 </div>
 <div class="form-card calculator-card">
 <form action="https://api.web3forms.com/submit" id="bryum-quote-form" method="POST">
 <fieldset class="service-picker">
 <legend>Zaškrtněte služby, o které máte zájem:</legend>
 <h3 class="service-picker-heading">Čištění střechy</h3>
-<div class="form-field roof-area-field" hidden="" id="roof-area-wrap">
-<label for="roof-area">Odhadněte plochu střechy v m²</label>
-<input id="roof-area" inputmode="numeric" min="1" name="Plocha strechy (m2)" placeholder="Např. 150" step="1" type="number"/>
-<small>Stačí váš odhad. Přesnou plochu ověříme při bezplatné prohlídce.</small>
-</div>
 <div class="roof-service-list">
 <label class="roof-service-row" for="service-cleaning">
 <input id="service-cleaning" name="Sluzba - cisteni strechy" type="checkbox" value="Čištění střechy – 64 Kč/m²"/>
@@ -35,6 +30,11 @@
 <input id="service-impregnation" name="Sluzba - nano keramicka impregnace" type="checkbox" value="Nano keramická impregnace – 54 Kč/m²"/>
 <span>Nano keramická impregnace (54 Kč/m²)</span>
 </label>
+</div>
+<div class="form-field roof-area-field" id="roof-area-wrap">
+<label for="roof-area">Odhadněte plochu střechy v m²</label>
+<input id="roof-area" inputmode="numeric" min="1" name="Plocha strechy (m2)" placeholder="Např. 150" step="1" type="number"/>
+<small>Vyplňte při výběru služeb čištění střechy. Stačí váš odhad; přesnou plochu ověříme při bezplatné prohlídce.</small>
 </div>
 
 <div class="form-field roof-type-field" hidden="" id="roof-type-wrap">
@@ -118,7 +118,6 @@
     { element: impregnationCheck, label: 'Nano keramická impregnace', rate: 54 }
   ];
   const heightCheck = document.getElementById('service-height');
-  const roofAreaWrap = document.getElementById('roof-area-wrap');
   const roofTypeWrap = document.getElementById('roof-type-wrap');
   const roofArea = document.getElementById('roof-area');
   const totalEl = document.getElementById('calculator-total');
@@ -134,7 +133,6 @@
     const hasRoof = selectedRoofServices.length > 0;
     const hasHeight = heightCheck.checked;
 
-    roofAreaWrap.hidden = !hasRoof;
     roofTypeWrap.hidden = !hasRoof;
     roofArea.required = hasRoof;
 
