@@ -56,3 +56,6 @@ Aktualizace 24. 11. 2026: Stránka IG CeramFloor více cílí na garáže, autos
 - Karta střech používá skutečné video `media/hero-drone.mp4`; karta podlah používá ilustrační vizualizaci.
 - Pochoznost podlahy přibližně po 24 hodinách je zvýrazněna přímo v kartě podlah.
 - Zachovány jsou ceny, formulář, SEO, analytika, původní logo, `CNAME` a ostatní stránky.
+
+
+Aktualizace: hlavní stránka nově vyjmenovává hlavní minerální podklady (broušený, leštěný a neleštěný beton, čerstvý beton po ověření podmínek, teraco, dlažební kostky, cihly a přírodní kámen). Verze odkazu na site.css byla změněna kvůli obnovení mezipaměti prohlížečů.

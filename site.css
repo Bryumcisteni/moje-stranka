@@ -672,3 +672,26 @@
 .home-services-first .floor-24h-copy small{
   color:#465547;
 }
+
+
+/* Surface types on the homepage floor service card. */
+.floor-card-materials{margin:12px 0 15px;padding:12px 13px;border:1px solid #dce7d1;border-left:3px solid #88b92a;border-radius:12px;background:#f4f7ee;color:#324437}
+.floor-card-materials>strong{display:block;margin:0 0 8px;color:#203b2b;font-size:.82rem;font-weight:900}
+.floor-card-material-tags{display:flex;flex-wrap:wrap;gap:6px}
+.floor-card-material-tags span{display:inline-block;padding:5px 8px;border:1px solid #dce5d5;border-radius:999px;background:#fff;color:#34483a;font-size:.72rem;font-weight:700;line-height:1.35}
+.floor-card-materials small{display:block;margin-top:8px;color:#536354;font-size:.68rem;line-height:1.45}
+.floor-materials-heading{max-width:850px;margin:28px auto 0}
+.floor-materials-heading .eyebrow{display:block;margin-bottom:7px}
+.floor-materials-heading h3{margin:0 0 8px;color:#18392b;font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.15;letter-spacing:-.025em}
+.floor-materials-heading p{margin:0;color:#58665b;font-size:.9rem;line-height:1.6}
+.floor-materials-note{max-width:900px;margin:10px auto 0;color:#58665b;font-size:.78rem;line-height:1.55}
+
+/* High-contrast version of the 24-hour callout on the light homepage card. */
+.home-services-first .floor-24h-highlight .floor-24h-copy .floor-24h-eyebrow{color:#294a1d!important;font-weight:950!important}
+.home-services-first .floor-24h-highlight .floor-24h-copy strong{color:#18392b!important}
+.home-services-first .floor-24h-highlight .floor-24h-copy small{color:#405347!important}
+@media(max-width:760px){
+  .floor-card-materials{padding:11px 12px;margin:11px 0 14px}
+  .floor-card-material-tags span{font-size:.69rem}
+  .floor-materials-heading{margin-top:22px}
+}
