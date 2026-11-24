@@ -59,3 +59,8 @@ Aktualizace 24. 11. 2026: Stránka IG CeramFloor více cílí na garáže, autos
 
 
 Aktualizace: hlavní stránka nově vyjmenovává hlavní minerální podklady (broušený, leštěný a neleštěný beton, čerstvý beton po ověření podmínek, teraco, dlažební kostky, cihly a přírodní kámen). Verze odkazu na site.css byla změněna kvůli obnovení mezipaměti prohlížečů.
+
+## Poslední úprava
+- Hlavní karta střech nově obsahuje výrazný pruh „Ochrana po impregnaci – přibližně 6 až 8 let“ s upozorněním, že skutečná výdrž závisí na krytině a podmínkách.
+- Označení „Kompletní čištění střechy“ a „Ochrana podlah v provozu“ v cenových blocích má místo dlouhé vodorovné čárky malý kulatý akcent.
+- Aktualizována verze odkazu na společný CSS soubor kvůli mezipaměti prohlížeče.
