@@ -1,48 +1,44 @@
-# BRYUM Čištění – aktuální web
+# BRYUM – aktuální web (střechy + renovace podlah)
 
-Statický web připravený pro GitHub Pages a doménu `bryumcisteni.cz`.
+Statický web pro GitHub Pages a doménu `bryumcisteni.cz`.
 
-## Nahrání na GitHub Pages
-1. Rozbalte ZIP.
-2. Nahraďte obsah kořenové složky repozitáře soubory z tohoto balíčku.
-3. Zachovejte `CNAME` v kořeni repozitáře.
-4. V GitHubu ponechte **Settings → Pages → Deploy from a branch → main → /(root)**.
-5. Po publikaci otestujte hlavní stránku, formulář a mobilní zobrazení.
-
-## Služby a ceny
-- **Hlavní služba: kompletní čištění střechy – 147 Kč/m².**
-- Položkový rozpis kompletního balíčku:
-  - Biocidní ošetření: **29 Kč/m²**
-  - Čištění vapkou: **64 Kč/m²**
-  - Impregnace: **54 Kč/m²**
-- Tyto tři položky tvoří jeden navazující kompletní postup; nejsou nabízeny samostatně.
-- **Čištění okapů je zdarma při objednání kompletního čištění střechy.** Samostatné objednávky čištění okapů se nenabízejí.
-- **Výškové práce** jsou samostatnou službou s individuální cenovou nabídkou.
+## Struktura nabídky
+- **Čištění a impregnace střech:** kompletní postup 147 Kč/m² (biocid 29 Kč/m², čištění vapkou 64 Kč/m², impregnace 54 Kč/m²).
+- **Renovace a ochrana betonových a minerálních podlah:** aplikace IG CeramFloor 499 Kč/m².
+- **Příprava podlahy:** odmaštění, odstranění minerálních usazenin a případné další vrstvy se posuzují a nacení individuálně podle stavu podkladu.
+- **Výškové práce:** samostatná služba s individuální nabídkou.
 - BRYUM není plátcem DPH.
 
-## Obsah webu
-- `index.html` – hlavní stránka, služby, ceník, recenze a FAQ
-- `cisteni-strech.html` – rozšířená stránka hlavní služby a podrobný ceník
-- `cisteni-okapu.html` – informační stránka: okapy zdarma jako součást kompletního čištění střechy
-- `vyskove-prace.html` – samostatná nabídka výškových prací
-- `poptavka.html` – poptávkový formulář s kalkulačkou
-- `kontakty.html` – kontakty a sídla
-- `dekujeme.html`, `404.html` – pomocné stránky
-- `site.css`, `site.js` – společný vzhled a mobilní navigace
-- `images/` – logo a fotografie
-- `media/hero-drone.mp4` – úvodní video z dronu
-- `robots.txt`, `sitemap.xml` – základní soubory pro vyhledávače
+## Hlavní stránky
+- `index.html` – přehled obou hlavních specializací, ceník, recenze a FAQ.
+- `cisteni-strech.html` – detailní stránka čištění střech.
+- `renovace-betonovych-podlah.html` – detailní stránka systému IG CeramFloor, vlastností, použití a ceny.
+- `vyskove-prace.html` – výškové práce.
+- `poptavka.html` – společný poptávkový formulář s kalkulací pro střechy i podlahy a individuální volbou výškových prací.
+- `kontakty.html` – kontaktní informace a působnost.
+- `dekujeme.html`, `404.html` – pomocné stránky.
+- `keramicka-ochrana-podlah.html` a `cisteni-okapu.html` – staré adresy přesměrované na aktuální stránky.
 
-## Poptávkový formulář a kalkulačka
-Kalkulačka počítá kompletní čištění střechy jako součet tří položek:
-- plocha × 29 Kč/m² za biocidní ošetření,
-- plocha × 64 Kč/m² za čištění vapkou,
-- plocha × 54 Kč/m² za impregnaci.
+## Poptávkový formulář
+- Formulář odesílá JSON v UTF-8 na Web3Forms.
+- Během odesílání ukazuje stav „Odesílám poptávku…“.
+- Jméno není povinné; e-mail je povinný a telefon nepovinný.
+- Plocha střechy zůstává trvale viditelná pod třemi střešními volbami; povinná je jen při výběru střešní služby.
+- Pro IG CeramFloor je uvedena sazba 499 Kč/m² za aplikaci. Příprava podkladu a případné další vrstvy se oceňují individuálně.
+- Obyčejné otevření formuláře nemá předvybranou žádnou službu. Odkaz `poptavka.html?sluzba=podlahy` předvybere podlahy; `?sluzba=strechy` předvybere čištění střech.
 
-Výsledkem je **147 Kč/m²**. Kalkulace zároveň uvádí čištění okapů zdarma jako součást kompletního balíčku. Výškové práce lze vybrat samostatně a jejich cena se stanoví individuálně. Formulář odesílá poptávku přes původní FormSubmit endpoint a po úspěšném odeslání zobrazuje potvrzení přímo ve formuláři.
+## Technické podklady IG CeramFloor
+Texty o vlastnostech a použití vycházejí z uživatelem dodaného českého technického listu IG CeramFloor. Výrobce uvádí mimo jiné test abraze EN 13892-5 se zlepšením o 92,5 %, možnost použití na vhodných vyhřívaných površích a pochozí stav přibližně po 24 hodinách. Uváděná životnost „až 10 let“ je prezentována jako údaj výrobce, nikoli jako automatická záruka.
+
+## Nasazení na GitHub Pages
+1. Rozbalte ZIP.
+2. Nahraďte soubory v kořenové složce repozitáře soubory z balíčku.
+3. Zachovejte `CNAME` v kořeni repozitáře.
+4. Ponechte GitHub Pages nastavené na `main` a `/(root)`.
+5. Po publikaci otestujte hlavní stránku, mobilní zobrazení, formulář střechy, formulář podlah a doručení e-mailu.
 
 ## SEO a analytika
-Web obsahuje titulky a meta popisy, canonical URL, Open Graph, strukturovaná data, popisy obrázků, `robots.txt` a `sitemap.xml`. Cloudflare Web Analytics je vloženo do všech HTML stránek. Po publikaci doporučujeme zkontrolovat doménu v Google Search Console a Seznam Webmaster a odeslat sitemapu `https://bryumcisteni.cz/sitemap.xml`.
+Web obsahuje aktualizované titulky, meta popisy, canonical URL, Open Graph, strukturovaná data, `robots.txt` a `sitemap.xml`. Cloudflare Web Analytics zůstává zachováno.
 
 ## Kontakty
 - Telefon: +420 799 522 522
