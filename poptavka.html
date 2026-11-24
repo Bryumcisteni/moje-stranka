@@ -170,28 +170,15 @@
   form.addEventListener('change', updateCalculator);
   form.addEventListener('input', updateCalculator);
 
-  // FormSubmit AJAX: po úspěšném přijetí poptávky zobrazíme poděkování
-  // přímo na stránce. Odpadne tak další načítání samostatné stránky dekujeme.html.
-  // Přímé HTML POST odeslání přes FormSubmit – stejně jako v původním webu.
-  // Nepoužíváme AJAX/fetch, takže odpadá dodatečný JSON/CORS požadavek.
+  // Validní formulář odesílá prohlížeč přímo metodou POST na FormSubmit,
+  // stejně jako v původním webu. JavaScript pouze hlídá výběr služby.
   form.addEventListener('submit', event => {
     if (!roofCheck.checked && !heightCheck.checked) {
       event.preventDefault();
       alert('Vyberte prosím alespoň jednu službu, o kterou máte zájem.');
       roofCheck.focus();
-      return;
-    }
-
-    // Odeslání necháváme na nativním POST formuláře přímo na FormSubmit.
-    // FormSubmit po přijetí požadavku přesměruje návštěvníka na adresu _next.
-    const submitButton = form.querySelector('button[type=\"submit\"]');
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.setAttribute('aria-busy', 'true');
-      submitButton.textContent = 'Odesílám poptávku…';
     }
   });
-
   updateCalculator();
 })();
 </script>
