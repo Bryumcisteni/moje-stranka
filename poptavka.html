@@ -19,27 +19,27 @@
 <h3 class="service-picker-heading">Čištění střechy</h3>
 <div class="form-field roof-area-field" hidden="" id="roof-area-wrap">
 <label for="roof-area">Odhadněte plochu střechy v m²</label>
-<input id="roof-area" inputmode="numeric" min="1" name="Plocha střechy (m²)" placeholder="Např. 150" step="1" type="number"/>
+<input id="roof-area" inputmode="numeric" min="1" name="Plocha strechy (m2)" placeholder="Např. 150" step="1" type="number"/>
 <small>Stačí váš odhad. Přesnou plochu ověříme při bezplatné prohlídce.</small>
 </div>
 <div class="roof-service-list">
 <label class="roof-service-row" for="service-cleaning">
-<input id="service-cleaning" name="Služba – čištění střechy" type="checkbox" value="Čištění střechy – 64 Kč/m²"/>
+<input id="service-cleaning" name="Sluzba - cisteni strechy" type="checkbox" value="Čištění střechy – 64 Kč/m²"/>
 <span>Čištění střechy (64 Kč/m²)</span>
 </label>
 <label class="roof-service-row" for="service-biocide">
-<input id="service-biocide" name="Služba – aplikace biocidu" type="checkbox" value="Aplikace biocidu – 29 Kč/m²"/>
+<input id="service-biocide" name="Sluzba - aplikace biocidu" type="checkbox" value="Aplikace biocidu – 29 Kč/m²"/>
 <span>Aplikace biocidu (29 Kč/m²)</span>
 </label>
 <label class="roof-service-row" for="service-impregnation">
-<input id="service-impregnation" name="Služba – nano keramická impregnace" type="checkbox" value="Nano keramická impregnace – 54 Kč/m²"/>
+<input id="service-impregnation" name="Sluzba - nano keramicka impregnace" type="checkbox" value="Nano keramická impregnace – 54 Kč/m²"/>
 <span>Nano keramická impregnace (54 Kč/m²)</span>
 </label>
 </div>
 
 <div class="form-field roof-type-field" hidden="" id="roof-type-wrap">
 <label for="roof-type">Typ střešní krytiny</label>
-<select id="roof-type" name="Typ střešní krytiny">
+<select id="roof-type" name="Typ strechni krytiny">
 <option value="Nevím / jiné">Nevím / jiné</option>
 <option>Betonové střešní tašky</option>
 <option>Pálené střešní tašky</option>
@@ -49,7 +49,7 @@
 </div>
 <div class="height-service-option">
 <label class="roof-service-row" for="service-height">
-<input id="service-height" name="Výškové práce" type="checkbox" value="Výškové práce – individuální nabídka"/>
+<input id="service-height" name="Vyskove prace" type="checkbox" value="Výškové práce – individuální nabídka"/>
 <span>Výškové práce – individuální nabídka</span>
 </label>
 </div>
@@ -59,7 +59,7 @@
 <div class="calculator-total" id="calculator-total">Vyberte službu a zadejte množství</div>
 <p class="calculator-breakdown" id="calculator-breakdown">Výpočet je orientační. Konečnou cenu potvrdíme po bezplatné prohlídce a zaměření střechy dronem.</p>
 <div class="calculator-vat-note">Nejsme plátci DPH.</div><p class="calculator-vat-detail">To znamená, že uvedená cena je konečná a DPH se k ní už nepřipočítává.</p></div>
-<input id="quote-total-hidden" name="Orientační kalkulace" type="hidden" value="Zatím nevyplněno"/>
+<input id="quote-total-hidden" name="Orientacni kalkulace" type="hidden" value="Zatím nevyplněno"/>
 <input id="quote-breakdown-hidden" name="Podrobnosti kalkulace" type="hidden" value=""/>
 <div class="form-section-title"><span class="eyebrow">Kontaktní údaje</span><h3>Vaše údaje</h3></div>
 <div class="form-grid">
@@ -75,7 +75,7 @@
 
 <div class="form-field full">
 <label for="message">Doplňující informace</label>
-<textarea id="message" name="Doplňující informace" placeholder="Můžete doplnit i další informace."></textarea>
+<textarea id="message" name="Doplnujici informace" placeholder="Můžete doplnit i další informace."></textarea>
 </div>
 </div>
 
@@ -214,10 +214,15 @@
     }
 
     try {
+      // Web3Forms přijímá JSON; JSON.stringify odešle české hodnoty v UTF-8.
+      const payload = Object.fromEntries(new FormData(form).entries());
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form)
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
       });
       const result = await response.json();
 
